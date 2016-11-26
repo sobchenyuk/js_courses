@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+	// Или ||
+	
+		alert( true || true ); // true
+		alert( false || true ); // true
+		alert( true || false ); // true
+		alert( false || false ); // false
+
+
+	// Какой будет результат
+		if (1 || 0) {
+		  // Зайдем сюда?
+		}
+
+
+	// Какой результат выполнения
+	var undef;
+	var zero = 0;
+	var emptyStr = "";
+	var language = "JavaScript!";
+
+	var result = undef || zero || emptyStr || language || 0;
+
+
+	// Оператор &&
+		
+	alert( true && true ); // true
+	alert( false && true ); // false
+	alert( true && false ); // false
+	alert( false && false ); // false 
+	
+
+	// Cработет ли выражение
+	if (1 && 0) {
+	  alert( 'Работает?' );
+	}
+
+	// Оператор НЕ !
+		
+	var result = !value;
+
+	alert( !true ); // false
+	alert( !0 ); // true
+
+	</script>
+</body>
+</html>
+

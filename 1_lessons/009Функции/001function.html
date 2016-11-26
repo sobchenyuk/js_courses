@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+	// Простая функция
+	function show() {
+	  alert( 'Привет я изучаю JavaScript' );
+	}
+	// Вызов функции
+	show();
+
+
+	// Локальные переменные, вызываються внутри функции и не вызываються снаружи
+	function show() {
+	  var language = 'Привет, я - JavaScript!'; // локальная переменная
+	  alert( language );
+	}
+
+	show(); // Привет, я - JavaScript!
+	alert( language );
+
+
+	// Внешние переменные можно использовать внутри функции
+	var language = 'JavaScript';
+
+	function show() {
+	  var message = 'Привет, я ' + language;
+	  alert(message);
+	}
+
+	show(); // Привет, я - JavaScript!
+
+	
+
+	// Переопределение переменной в функции
+	var language = 'JavaScript';
+
+	function show() {
+	  language = 'Ruby'; // (1) присвоение во внешнюю переменную
+
+	  var message = 'Привет, я ' + language;
+	  alert( message );
+	}
+
+	show();
+
+	alert( language ); // Ruby, значение внешней переменной изменено функцией
+
+	</script>
+</body>
+</html>
+

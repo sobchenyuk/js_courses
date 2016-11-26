@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    	
+    	// Обычная функция Expression
+   		var f = function(...) { /* тело функции */ };
+
+   		// Именованая функция Expression
+   		var f = function say(...) { /* тело функции */ };
+
+
+   		// Пример получения кода функции
+   		var f = function say() {
+		    alert( say ); // изнутри функции - видно (выведет код функции)
+		  };
+
+		  alert( say ); // снаружи - не видно (ошибка: undefined variable 'say')
+
+		// Не возможно переписать
+		var f = function say() {
+		  say = 'otherName'; // попытка перезаписи
+		  alert( say ); 
+		};
+
+		f();
+
+    </script>
+</body>
+
+</html>

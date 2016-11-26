@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    
+    // Анонимные функции
+
+    function ask(question, yes, no) {
+        if (confirm(question)){
+           yes(); 
+        } 
+        else {
+            no();
+        }
+    }
+
+    ask(
+        "Вы согласны?",
+        function(){alert("Вы согласились.")},
+        function(){alert("Вы отменили выполнение.")}
+    );
+
+
+    // Конструктор функции
+    	
+    var sum = new Function('a,b', ' return a+b; ');
+	var result = sum(1, 2);
+	alert( result ); // 3
+
+
+    </script>
+</body>
+
+</html>

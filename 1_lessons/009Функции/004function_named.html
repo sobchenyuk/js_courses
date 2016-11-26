@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+	// Вывод контекста функций
+		function say() {
+		  alert( "Привет" );
+		}
+		alert( say ); // выведет код функции
+
+
+	// Копия функции
+		function say() {   // (1)
+		  alert( "Привет" );
+		}
+
+		var func = say;    // (2)
+		func(); // Привет    // (3)
+
+		say = null;
+		say(); // Ошибка
+
+
+	// Function Declaration
+		function sum(a, b) {
+		  return a + b;
+		}
+
+	// Function Expression
+		var sum = function(a, b) {
+		  return a + b;
+		}
+
+	// Основное отличие 
+	
+	// Function Declaration
+		say("JavaScript"); // Привет, JavaScript
+
+		function say(lang) {
+		  alert( "Привет, " + lang );
+		}
+
+
+	// Function Expression	
+		say("JavaScript"); // ошибка!
+
+		var say = function(lang) {
+		  alert( "Привет, " + lang );
+		}
+
+	</script>
+</body>
+</html>
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+
+	// Передача параметров в функции
+	function show(lang, standart) { // параметры from, text
+		// [[SCOPE]] var lang = lang, standart = starndart;
+	  lang = "**" + lang + "**"; // здесь может быть сложный код оформления
+	  alert(lang + standart);
+	}
+	show('JavaScript', 'ECMA!');
+
+
+
+	// Функция копирует получаемые аргументы в локальные переменные
+	function show(from, to) {
+	  from = '**' + from + '**'; // меняем локальную переменную from
+	  alert( from + to );
+	}
+
+	var from = "JavaScript";
+
+	show(from, "ECMA");
+
+	alert( from ); // старое значение from без изменений, в функции была изменена копия
+
+
+	// Если значение не задано
+	function show(from, to) {
+	  alert( from + to );
+	}
+	
+	show("JavaScript"); // JavaScriptundefined
+
+
+	! // Задание если аргумента to - нет вывести JavaScript - ECMA пользуясь оператором ?, || 
+
+
+	// Возврат значения функции
+	function calc(a, b, c) {
+	   return a + b + c;
+	}
+	var test = calc(4, 2, 1);
+	alert(test); // 7 
+
+
+	// Ключевая переменная arguments
+	function show(from, to) { // параметры from, text
+	  console.log(arguments);
+	}
+	show('JavaScript', 'ECMA!');
+
+
+	</script>
+</body>
+</html>
+

@@ -1,0 +1,68 @@
+k<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		// Условие if else
+
+		var lang = prompt('Какой язык вы изучаете?', '');
+		if (lang != 'JavaScript'){
+			alert( 'А вот и неправильно!' );
+		} 
+		else {
+			alert( 'Да вы учите ' + lang );
+		}
+
+
+		// Преобразование к логическому типу
+		if (0) { // 0 преобразуется к false
+		  ...
+		}
+
+		if (1) { // 1 преобразуется к true
+		  ...
+		}
+
+
+		// Несколько условий
+		var lang = prompt('Какой язык вы изучает?', '');
+
+		if (lang == 'JavaScript') {
+		  alert( 'Да вы учите ' + lang );
+		} else if (lang == 'PHP') {
+		  alert( 'Да вы гоните' );
+		} else {
+		  alert( 'Вы учите непонятно что' );
+		}
+
+
+		// Оператор ? вместо if
+		var staticLang = 'JavaScript';
+		var language = (staticLang == 'JavaScript') ? true : false; // true
+		var language = (staticLang == 'Ruby') ? true : false; // false
+			
+
+		// Несколько операторов ?
+		var lang = prompt('Какой язык вы изучает?', '');
+		var message = (lang == 'JavaScript') ? 'Да вы учите ' + lang : (lang == 'PHP') ? 'Да вы гоните' : 'Вы учите непонятно что';
+
+
+
+		// Задание Авторизация
+		/*Начало:
+			1) Кто пришел?
+				а) '' - вход отменен
+				б) 'PHP' - нет не стоит
+				в) 'JavaScript' - пароль
+					1) '' - вход отменен
+					2) 'Не важно что' - пароль не верен
+					3) 'ECMA' - Добро пожаловать 
+*/
+	</script>
+</body>
+</html>
+
