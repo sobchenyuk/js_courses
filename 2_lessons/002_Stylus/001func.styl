@@ -1,0 +1,24 @@
+lightGrey = #dddddd
+
+/* single box shadow */
+box-shadow()
+    -webkit-box-shadow arguments
+    -moz-box-shadow arguments
+    box-shadow arguments
+    html.ie8 &,
+    html.ie7 &,
+    html.ie6 &
+      border 2px solid arguments[length(arguments) - 1]
+      
+/* multiply functions */
+
+vendor(prop, args)
+    -webkit-{prop} args
+    -moz-{prop} args
+    {prop} args
+
+	border-radius()
+		vendor('border-radius', arguments)
+  
+	box-shadow()
+		vendor('box-shadow', arguments)

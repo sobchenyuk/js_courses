@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+	meta(charset="UTF-8")
+	title Document
+body
+	- var friends = 10
+	case friends
+		when 0
+			p you have no friends
+		when 1
+			p you have #{friends} friend
+		default
+			p you have #{friends} friends
