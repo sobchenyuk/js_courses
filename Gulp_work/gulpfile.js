@@ -4,6 +4,7 @@ var gulp        = require('gulp');
 	  cssmin        = require('gulp-cssmin');
 	  autoprefixer = require('gulp-autoprefixer');
 	  concatCss = require('gulp-concat-css');
+	  pngquant = require('imagemin-pngquant');
 
 
 
@@ -14,7 +15,7 @@ var gulp        = require('gulp');
   .pipe(cache(imagemin({
       interlaced: true
     })))
-  .pipe(gulp.dest('dist/images'))
+  .pipe(gulp.dest('dist/images/'))
 });
 
 gulp.task('clear',function(){//чистка кеша
@@ -23,8 +24,20 @@ gulp.task('clear',function(){//чистка кеша
 });
 
 
+
+gulp.task('default', function () {
+    return gulp.src('app/images/**/*')
+        .pipe(cache(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        })))
+        .pipe(gulp.dest('dist/images/'));
+});
+
+
  gulp.task('css', function(){
-  return gulp.src('./app/css/*.css')
+  return gulp.src('./app/css/*')
   
 		.pipe(concatCss('master.min.css'))
 		
