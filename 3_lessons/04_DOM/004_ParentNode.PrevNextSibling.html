@@ -1,0 +1,33 @@
+﻿<!-- Свойство parentNode указывает на родителя. Например, для <body> таким элементом является <html>: -->
+<!-- Свойства previousSibling и nextSibling указывают на левого и правого братьев узла. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Работа с DOM деревом</title>
+</head>
+<body>
+    <script>
+        alert(document.body.parentNode === document.documentElement)
+        // document.documentElement - тег html - корень
+    </script>
+    <p>Пример:</p>
+    <ul id="myList">
+        <li id="item1">Кофе</li>
+        <li id="item2">Чай</li>
+        <li id="item3">Молоко</li>
+    <ul>
+    <p id="demo">Нажмите</p>
+    <button onclick="myFunction()">Пробовать</button>
+
+    <script>
+        function myFunction() {
+            var item = document.getElementById("item2");
+            var demo = document.getElementById("demo");  
+            demo.innerHTML = item.previousElementSibling.innerHTML;
+            console.log(item.nextElementSibling.innerHTML);
+        }
+    </script>
+
+    <p><strong>Напоминание:</strong> Пробелы внутри елементов - это текст, а текст - тоже узлы</p>
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿<!-- Метод document.getElementsByName(name) возвращает все элементы, у которых имя (атрибут name) равно данному. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Свойства объекта Document</title>
+    <script>
+        function getElements() {
+            var elementsNamedX = document.getElementsByName("x");
+            for (var i = elementsNamedX.length - 1; i >= 0; i--) {
+                elementsNamedX[i].style.display = 'none';
+            };
+        }
+    </script>
+</head>
+<body>
+    <label for="x">Коты:</label>
+    <input name="x" type="radio" value="Cats">
+    <label for="x">Собаки:</label>
+    <input name="x" type="radio" value="Dogs">
+
+    <input type="button" onclick="getElements()" value="Сколько на странице елементов с именем 'x'?">
+
+</body>
+</html>

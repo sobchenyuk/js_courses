@@ -1,0 +1,29 @@
+﻿<!-- document.getElementsByClassName - поиск элемента по классу. Работает только с IE9 и выше!-->
+<!DOCTYPE html>
+<html>
+    <title>Свойства объекта Document</title>
+<body>
+
+    <div class="example">Див с class="example".</div>
+    <div class="example">Див с class="example".</div>
+    <div class="example">Див с class="example".</div>
+
+    <button onclick="myFunction()">Пробовать</button>
+
+    <script>
+        function myFunction() {
+            var example = document.getElementsByClassName("example");
+            /*example[0].innerHTML = "Hello World!";
+            example[1].innerHTML = "Привет Мир!";*/
+
+            for (var i = example.length - 1; i >= 0; i--) {
+                example[i].innerHTML = 'Hello World';
+                if (i === 1) {
+                    example[i].innerHTML = "Привет Мир!"
+                }
+            };
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿<!-- document.getElementsByTagName - метод, который возвращает массив из элементов, имеющих такой тег -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Свойства объекта Document</title>
+    <script>
+    // 2
+        function getElements() {
+          var inputArray = document.getElementsByTagName("input");
+          console.log(inputArray);
+        }
+  </script>
+</head>
+<body>
+
+    <!-- 2 -->
+    <input type="text" size="20"><br />
+    <input type="text" size="20"><br />
+    <input type="text" size="20"><br /><br />
+    <input type="button" onclick="getElements()" value="Сколько инпутов на странице?">
+
+    <!-- 1 -->
+    <!-- Вызов elem.getElementsByTagName('*') вернет список из всех детей узла elem в порядке их обхода. -->
+    <div id="d1">
+      <ol id="ol1">
+        <li id="li1">1</li>
+        <li id="li2">2</li>
+        <li>
+            <a href="#">1</a>
+        </li>
+    </ol>
+</div>
+<script>
+    // 1
+    var div = document.getElementById('d1');
+    var elems = div.getElementsByTagName('*');
+
+    for(var i=0; i<elems.length; i++) {
+        console.log(elems[i]);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Встраивание JavaScript кода в HTML страницу</title>
+    <!-- Из внешнего файла  -->
+    <script src="script.js"></script>
+    <!-- В тэге Script в head страницы --> 
+    <script type="text/javascript">
+        window.alert("From Head !");
+        console.log(document.getElementById('p1'));
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- В тэге script в body страницы -->
+    <script type="text/javascript">
+        alert(11)// JavaScript код
+    </script>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque nihil molestiae similique natus numquam quam officia minima nesciunt rerum recusandae, corrupti aliquam in facere qui voluptatibus! Magnam ea tenetur, iste!
+    </p>
+
+    <!-- В качестве обработчика события через html атрибут. -->
+    <input type="button" value="Кнопка" onclick="alert('Hello')" />
+    <br />
+
+    <p id="p1">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, alias. Consequuntur sunt enim, provident accusantium, dolores qui, animi id nihil rem, tempora ipsam aut similique aperiam quod unde nostrum dolorem!
+    </p>
+
+    <!--Как тело URL адреса-->
+    <a href="javascript:alert('Hello')">Ссылка</a>
+
+    <br />
+</body>
+</html>

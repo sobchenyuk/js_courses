@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Работа с узлами DOM - методы и свойства</title>
+<!--     
+        Методы для работы с DOM
+        appendChild - добавить дочерний элемент
+        insertBefore - добавить элемент перед указанным
+        removeChild - удаление элемента
+        replaceChild - замена одного элемента на другой
+        createTextNode - создает строковой узел с указанным в качестве аргумента значением
+        innerHTML - СВОЙСТВО,  устанавливает или получает всю разметку и содержание внутри данного элемента
+        createElement - создает обычный узел элемента 
+-->
+</head>
+<body>
+    <script>
+        function append(form) {
+            if (form.input.value) {
+                var newItem = document.createElement("li");
+                newItem.innerHTML = form.input.value;
+                console.log(newItem);
+                document.getElementById("myUL").appendChild(newItem);
+            }
+        };
+
+        function replace(form) {
+            if (form.input.value) {
+                var newItem = document.createElement("li");
+                var lastChild = document.getElementById("myUL").lastElementChild;
+                newItem.innerHTML = "<b>" + form.input.value + "</b>";
+                document.getElementById("myUL").replaceChild(newItem, lastChild);
+            }
+        };
+
+      function restore() {
+            var mainObj = document.getElementById("myUL");
+            while (mainObj.childNodes.length > 2) {
+                var oneChild = mainObj.lastChild;
+                mainObj.removeChild(oneChild);
+            }
+       };
+
+       function titleName(form) {
+            var formValue = form.input.value;
+            var myUL = document.getElementById("myUL");
+            var newTitle = document.createElement("div");
+            newTitle.innerHTML = "<h1>" + formValue + "</h1>";
+            document.body.insertBefore(newTitle, myUL);
+       }
+</script>
+
+<h2>Использование методов <b>appendChild()</b>, <b>removeChild()</b>, и <b>replaceChild()</b></h2>
+<br />
+<ul id="myUL"><li>Первый элемент</li><li>Второй элемент</li></ul>
+<form>
+     Введите текст, который будет добавлен или заменен в элементе: 
+     <input type="text" id="myinput" name="input" size="30" /><br />
+     <input type="button" value="Добавить" onclick="append(this.form)" />
+     <input type="button" value="Заменить последний" onclick="replace(this.form)" />
+     <input type="button" value="Сброс" onclick="restore()" />
+     <input type="button" value="Заголовок для списка" onclick="titleName(this.form)" />
+</form>
+</body>
+</html>

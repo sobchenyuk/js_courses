@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta>
+    <title>Работа с узлами DOM - методы и свойства -2</title>
+<!-- 
+    outerHTML -Свойство содержит HTML узла целиком. 
+    createElement - создания элементов
+    cloneNode - склонировать из существующего
+-->
+</head>
+<body>
+    <script>
+        var newDiv = document.createElement('div');
+        newDiv.id = 'myid';
+        newDiv.innerHTML = 'Hello world!';
+        var cloneDiv = newDiv.cloneNode(true);
+        cloneDiv.id = "newID";
+        console.log(cloneDiv);
+        document.body.appendChild(newDiv);
+        var cloneDivElement = document.getElementById('newID');
+        console.log(cloneDivElement);
+    </script>
+</body>
+</html>

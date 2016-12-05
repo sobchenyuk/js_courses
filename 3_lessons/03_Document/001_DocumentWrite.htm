@@ -1,0 +1,33 @@
+﻿<!-- Метод document.write(str) корректно работает только пока HTML еще не догружен, дописывая текст в текущее место HTML. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta>
+    <title>DocumentWrite</title>
+</head>
+
+<!-- 1 -->
+<body>
+<div></div>
+    1
+    <script>
+        document.write('<i>' + 2 + '</i>');
+    </script>
+    3
+
+    <!-- 2 -->
+    <script> 
+      document.write('<style> td { color: #F40 } </style>');
+  </script>
+  <table>
+      <tr>
+          <script> document.write('<td>') </script>
+          Текст внутри TD.
+          <script> document.write('</td>') </script>
+      </tr>
+  </table>
+
+  <!-- 3 -->
+  <input type="button" onclick="document.write(&quot;Пустая страница!&quot;);" value="Запустить document.write('Пустая страница!')">
+</body>
+</html>

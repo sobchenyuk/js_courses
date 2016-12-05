@@ -1,0 +1,20 @@
+﻿<!-- Свойства firstChild и lastChild показывают на первый и последний дочерние элементы и равны null, если потомков нет. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Работа с DOM деревом</title>
+</head>
+<body>
+    <p id="demo">Получить имя узла первого елемента</p>
+    <button onclick="myFunction()">Попробовать</button>
+    <script>
+        function myFunction() {
+            var demo = document.getElementById("demo");
+            demo.innerHTML = document.firstElementChild.nodeName;
+            console.log(document.lastElementChild.nodeName);
+            // при помощи tagName мы можем работать только с элементами, 
+            // а nodeName может что-то сказать и о других типах узлов.
+        }
+</script>
+</body>
+</html>

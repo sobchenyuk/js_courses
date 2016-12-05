@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Работа с узлами DOM - Атрибуты</title>
+    <script>
+        window.onload = function () {
+            var a1 = document.getElementById("a1");
+            var a2 = document.getElementById("a2");
+            var a3 = document.getElementById("a3");
+
+            // установка атрибута
+            a1.setAttribute("href", "http://google.com");
+
+            // удаление атрибута
+            a2.removeAttribute("href");
+
+            // чтение атрибута
+            alert(a3.getAttribute("href"));
+        }
+    </script>
+</head>
+<body>
+    <a id="a1" href="#">Text a1</a>
+    <a id="a2" href="http://google.com.ua">Text a2</a>
+    <a id="a3" href="http://google.com.ua">Text a3</a>
+</body>
+</html>

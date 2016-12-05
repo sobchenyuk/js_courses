@@ -1,0 +1,20 @@
+<!-- У каждого элемента в DOM-модели есть тип. Его номер хранится в атрибуте elem.nodeType Всего в DOM различают 12 типов элементов.
+
+Обычно используется только один: Node.ELEMENT_NODE, номер которого равен 1. Элементам этого типа соответствуют HTML-теги.
+
+Иногда полезен тип Node.TEXT_NODE, который равен 3. Это текстовые элементы.-->
+<!DOCTYPE html>
+<html>
+    <title>Работа с DOM деревом</title>
+<body>
+   <script>
+    function go() {
+       alert(document.documentElement.nodeType) // documentElement - обращение к тегу html
+    }
+</script>
+	<input type="button" onclick="go()" value="Go"/>
+<p></p>
+<a href="#" title='123123'></a>
+<br>
+</body>
+</html>

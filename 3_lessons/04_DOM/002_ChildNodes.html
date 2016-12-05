@@ -1,0 +1,25 @@
+﻿<!-- С вершины DOM дерева можно пойти дальше вниз. Для этого каждый DOM-узел содержит массив всех потомков, отдельно - ссылки на первого и последнего потомка и тд. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Работа с DOM деревом</title>
+</head>
+<body>
+  <input type="button" onclick="go()" value="Go"/>Текст
+  <div><ul><li>234</li><li>234</li><li><a href="#">sdfsd</a>234</li></ul></div>
+  <!-- Все дочерние элементы, включая текстовые находятся в массиве childNodes. - прямые потомки -->
+  <img src="http://i.imgur.com/gLUaw3D.png" alt="values">
+  <script>
+for(var i = 0; i < document.body.childNodes.length; i++) {
+    var child = document.body.childNodes[i];
+    console.log(child);
+    if (child.nodeType === 1) {
+        console.log(child.tagName);
+    } 
+        // Атрибут есть у элементов-тегов и содержит имя тега в верхнем регистре, только для чтения.
+    }
+    </script>
+</body>
+</html>
+
+
