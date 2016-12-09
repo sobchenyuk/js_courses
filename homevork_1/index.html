@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		.main-list-item {
+			display: inline-block;
+		}
+		.body-main-list {
+			margin-left: 0;
+			padding-left: 0;
+		}
+		.body-main-list,
+		.btn {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		button {
+			text-transform: unset
+		}
+		.button_active{
+			text-transform: uppercase;
+		}
+		li.main-list-item.active {
+			font-weight: 700;
+		}
+	</style>
+
+</head>
+<body>
+	
+
+
+<div class="main-list"><ul id="list" class="body-main-list"><li class="main-list-item">Ваш выбор</li><li class="main-list-item">Ваш выбор</li><li class="main-list-item">Ваш выбор</li><li class="main-list-item">Ваш выбор</li><li class="main-list-item">Ваш выбор</li><li class="main-list-item">Ваш выбор</li><li class="main-list-item">Ваш выбор</li><li class="main-list-item">Ваш выбор</li><li class="main-list-item">Ваш выбор</li><li class="main-list-item">Ваш выбор</li></ul></div>
+
+
+<hr>
+<br>
+<br>
+
+
+<div class="btn">
+	<button onclick="firstElenment(this)" >выбрать первый элемент</button>
+	<button onclick="lastElenment(this)">выбрать последний элемент </button>
+	<button onclick="nextElenment(this)">выбрать следующий элемент</button>
+	<button onclick="previousElenment(this)">выбрать предыдущий элемент</button>
+	<button onclick="insertPreviousElenment(this)">добавить элемент</button>
+	<button onclick="deleteLastElenment(this)">удалить элемент</button>
+	<button onclick="insertFirstElenment(this)">добавить в начало  </button>
+</div>
+
+
+
+
+	<script src="js/fn.js"></script>
+	
+</body>
+</html>
