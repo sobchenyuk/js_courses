@@ -1,0 +1,51 @@
+<!-- 
+    Перепишите все селекторы из первой папки 001_CSS_Selectors с помощью известных Вам методов и свойств.
+    В примере с классом добавьте к существующем классу, класс с именем newclass, а также выведите в консоль окне все стили что есть у элемента с этим классом
+    В примере с индентификатором добавьте свойства marginTop с значением 10px и background с значением red
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Children, Parent</title>
+    <style>
+/*    p {
+        color: brown;
+    }
+    div span {
+        color: red;
+    }
+    div > span {
+        color: green;
+    }*/
+    </style>
+</head>
+<body>
+    <h1 class="class1" id="id1">Title</h1>
+    <div>
+        <span> 
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco <span>SECOND SPAN</span> laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        </span>
+    </div>
+    <a href="#">Link</a>
+    <script>
+        var allParagraphs = document.getElementsByTagName("p");
+        for (var i = allParagraphs.length - 1; i >= 0; i--) {
+            allParagraphs[i].style.color = "brown";
+        };
+
+        var mainDiv = document.getElementsByTagName("div")[0];
+        var allSpansinDiv = mainDiv.getElementsByTagName("span");
+        for (var i = allSpansinDiv.length - 1; i >= 0; i--) {
+            allSpansinDiv[i].style.color = "red";
+        };
+
+        var allChildNodes = mainDiv.childNodes;
+        for (var i = allChildNodes.length - 1; i >= 0; i--) {
+            if (allChildNodes[i].tagName == "SPAN") {
+                allChildNodes[i].style.color = "green";
+            }
+        };
+    </script>
+</body>
+</html>

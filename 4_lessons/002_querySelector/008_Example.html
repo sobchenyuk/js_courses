@@ -1,0 +1,25 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>Простая анимация цвета</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div id="urgent">
+        <h1>Внимание!</h1>
+        Мигающая рамка!
+    </div>
+
+    <script type="text/javascript">
+        var urgent = document.getElementById("urgent");
+        urgent.style.border = "solid black 5px";
+        urgent.style.padding = "50px";
+        var colors = ["brown", "yellow", "orange", "red"]
+        var nextColor = 0;
+        // Вызов следующей функции каждые 500 миллисекунд для анимации цвета границы.
+        setInterval(function () {
+            urgent.style.borderColor = colors[nextColor++ % colors.length];
+        }, 500);
+    </script>
+</body>
+</html>

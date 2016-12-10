@@ -1,0 +1,24 @@
+<!-- querySelectorAll - Возвращает список элементов в пределах документа (поиск осуществляется в пределах указанного элемента) которые соответствуют указанной группе селекторов -->
+<!DOCTYPE html>
+<html>
+    <title>querySelector</title>
+    <meta charset="UTF-8">
+<body>
+    <h2 class="example">class="example"</h2>
+    <p class="example">class="example".</p> 
+
+    <p>Нажмите чтобы выделить параграф с классом example</p>
+
+    <button onclick="myFunction()">Пробовать</button>
+
+    <script>
+        function myFunction() {
+            var exampleElements = document.querySelectorAll(".example");
+            for (var i = exampleElements.length - 1; i >= 0; i--) {
+                exampleElements[i].style.backgroundColor = "red";
+            };
+        }
+    </script>
+
+</body>
+</html>

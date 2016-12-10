@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Attr</title>
+    <style>
+/*        a[target] {
+            background-color: yellow;
+        }
+        a[target=_blank] { 
+            background-color: red;
+}*/
+    </style>
+</head>
+<body>
+
+    <p>The links with a target attribute gets a yellow background:</p>
+
+    <a href="#" target="_top">w3schools.com</a>
+    <a href="http://www.google.com" target="_blank">google.com</a>
+    <a href="http://www.wikipedia.org" target="_self">wikipedia.org</a>
+    <script>
+        var attrTarget = document.getElementsByTagName("a");
+        for (var i = attrTarget.length - 1; i >= 0; i--) {
+            if (attrTarget[i].getAttribute("target") !== null) {
+                attrTarget[i].style.backgroundColor = "yellow";
+            }
+            if (attrTarget[i].getAttribute("target") === "_blank") {
+                attrTarget[i].style.backgroundColor = "red";
+            };
+        };
+    </script>
+</body>
+</html>

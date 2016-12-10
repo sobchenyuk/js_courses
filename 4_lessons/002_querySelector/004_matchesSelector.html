@@ -1,0 +1,21 @@
+<!-- Вызов elem.matches(css) проверяет, удовлетворяет ли elem селектору css. Он возвращает true либо false.
+Спецификация с ним ещё не утверждена, поэтому браузеры используют префиксы для его поддержки.
+https://github.com/desandro/matches-selector 
+http://caniuse.com/#feat=matchesselector
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>matchesSelector</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div id="foo">This is the element!</div>
+  <script type="text/javascript">
+    var el = document.getElementById("foo");
+    if (el.matches("div")) {
+      alert("Match!");
+    }
+  </script> 
+</body>
+</html>

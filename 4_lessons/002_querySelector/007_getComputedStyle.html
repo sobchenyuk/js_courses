@@ -1,0 +1,28 @@
+<!-- window.getComputedStyle -  используется для того, чтобы получить текущее используемое значение свойства -->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>getComputedStyle&currentStyle</title>
+    <style>
+      body { 
+        margin: 10em;
+        color: #ccc;
+        text-decoration: underline;
+        font-size: 16px;
+      }
+      .list{
+        margin: 10px;
+      }
+  </style>
+</head>
+<body>
+<div class="list" style="padding: 10px"></div>
+<script> 
+    var computedStyle = window.getComputedStyle(document.body);
+    console.log(computedStyle);
+    alert(computedStyle.marginTop);
+    console.log(document.querySelector('.list').style);
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>insertAdjacentHTML</title>
+    <script src="insertAdjacentFF.js"></script><!-- Для FF -->
+</head>
+<body>
+    <div id="relTo" style="width:300px; background:#e0d0a0;">
+        Куда перемещаем.
+    </div>
+    <br /><br />
+    Выберите подходящий вариант
+    <select onchange="Move(this)">
+        <option>beforeBegin</option>
+        <option>afterBegin</option>
+        <option>beforeEnd</option>
+        <option>afterEnd</option>
+    </select>
+    <div id="wanderer" style="color:green">Элемент что будем двигать.</div>
+    <script type="text/javascript">
+        function Move (select) {
+            var selected = select.selectedIndex;
+            var where = select.options[selected].innerHTML;
+
+            var relTo = document.getElementById("relTo");
+            var wanderer = document.getElementById("wanderer");
+
+            if (relTo.insertAdjacentElement) {
+                relTo.insertAdjacentElement(where, wanderer);
+            }
+            else {
+                alert ("В вашем браузере нету insertAdjacentElement метода. Обновитесь!");
+            }
+        }
+    </script>
+</body>
+</html>

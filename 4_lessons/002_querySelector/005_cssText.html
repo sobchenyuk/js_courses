@@ -1,0 +1,27 @@
+<!-- cssText - свойство, которое, задает или возвращает значение CSS стиле в виде строки. -->
+<!DOCTYPE html>
+<html>
+    <title>cssText</title>
+    <meta charset="UTF-8">
+    <style>
+        #myP {
+            text-decoration: none;
+            word-spacing: 55px;
+            color: green;
+        }
+        #nextP{
+            text-transform: uppercase;
+        }
+    </style>
+<body>
+    <p id="myP">Параграф</p>
+    <button type="button" onclick="myFunction()">Задать </button>
+    <p id="nextP" style="color: #ccc; text-decoration: underline;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam obcaecati minus blanditiis numquam recusandae itaque laudantium velit! Aut nesciunt, corrupti, quidem, nobis odio accusantium esse natus quaerat est voluptates quisquam!</p>
+    <script>
+        function myFunction() {
+            document.getElementById("myP").style.cssText = "background-color: #ff0010;font-size:55px;border:2px dashed #ffff00;color:#fff;";
+            // alert(document.getElementById("nextP").style.cssText);
+        }
+    </script>
+</body>
+</html>

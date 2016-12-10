@@ -1,0 +1,27 @@
+<!-- selectedIndex - свойство устанавливает или возвращает индекс выбранного option в раскрывающемся списке select -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>selectedIndex</title>
+</head>
+<body>
+    <select id="mySelect">
+        <option>Яблоко</option>
+        <option>Апельсин</option>
+        <option>Ананас</option>
+        <option>Банан</option>
+    </select>
+
+    <button onclick="myFunction()">Пробовать</button>
+
+    <script>
+        function myFunction() {
+            var mySelect = document.getElementById("mySelect");
+            mySelect.selectedIndex = "2";
+            alert(mySelect.selectedIndex);
+        }
+    </script>
+
+</body>
+</html>

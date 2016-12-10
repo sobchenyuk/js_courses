@@ -1,0 +1,26 @@
+<!-- insertAdjacentHTML позволяет вставлять произвольный HTML в любое место документа, в том числе и между узлами! -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>insertAdjacentHTML</title>
+    <script src="insertAdjacentFF.js"></script> <!-- Для FF -->
+</head>
+<body>
+    <ul id="myUL">
+        <li>1</li>
+        <li>2</li>
+        <!-- не хватает 3 4 -->
+        <li>5</li>
+    </ul>
+    <script>
+        var ul = document.getElementById("myUL");
+        // var li5 = ul.childNodes[7];
+        var li5 = ul.children[2]; // альтернатива из DOM4 не работает в ИЕ10-
+        var str = "<li>3</li>" +
+                  "<li>4</li>";
+
+        li5.insertAdjacentHTML("beforeBegin", str);
+    </script>
+</body>
+</html>

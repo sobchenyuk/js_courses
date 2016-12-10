@@ -1,0 +1,24 @@
+<!-- querySelector - позволяет принимать в качестве аргументов CSS-селектор и возвращает найденный элемент в виде элементов DOM -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>querySelector</title>
+</head>
+<body>
+    <h2 class="example">class="example"</h2>
+    <p class="example">class="example"</p> 
+
+    <p>Нажмите чтобы выделить параграф с классом example</p>
+
+    <button onclick="myFunction()">Пробовать</button>
+
+    <script>
+        function myFunction() {
+            var example = document.querySelector(".example");
+            example.style.backgroundColor = "red";
+        }
+    </script>
+
+</body>
+</html>
