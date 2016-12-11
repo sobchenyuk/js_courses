@@ -1,0 +1,52 @@
+<!-- Сравнение строк s1 и s2 обрабатывается по следующему алгоритму:
+
+Сравниваются первые символы: a = s1.charAt(0) и b = s2.charAt(0). Если они одинаковы, то следующий шаг, иначе, в зависимости от результата их сравнения, возвратить true или false
+Сравниваются вторые символы, затем третьи и так далее… Если в одной строке закончились символы, то она меньше. Если в обеих закончились — они равны. -->
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <title>Сравнение</title>
+<body>
+    <script>
+    var Z = "Z";
+    var A = "A";
+
+    if(A > Z) {
+        alert("A > Z");
+    }
+    else {
+        alert("A < Z");
+    }
+
+    var Anna = "Anna";
+    var Annya = "Annya";
+
+    if(Anna > Annya) {
+        alert("Anna > Annya");
+    }
+    else {
+        alert("Anna < Annya");
+    }
+
+    var fourteen = "14";
+    var two = "2";
+
+    if(fourteen > two) {
+        alert("14 > 2");
+    }
+    else {
+        alert("14 < 2");
+    }
+
+    var twoSymbols = "11";
+    var oneSymbol = "1";
+
+    if(twoSymbols > oneSymbol) {
+        alert("twoSymbols > oneSymbol");
+    }
+    else {
+        alert(" twoSymbols < oneSymbol");
+    }
+    </script>
+</body>
+</html>

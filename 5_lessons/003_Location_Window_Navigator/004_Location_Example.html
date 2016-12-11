@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<head>
+    <title>Парсинг URL</title>
+    <script>
+function getArgs() {
+    var argsObj = {};
+    var query = location.search.substring(1);     // Получение строки запроcа.
+    var pairs = query.split("&");                 // Разделение строки по амперсанду
+
+    for (var i = 0; i < pairs.length; i++) {
+
+        var pos = pairs[i].indexOf('=');            // Проверка пары "name=value"
+        if (pos === -1) continue;                    // Если не найдено - пропустить
+        var argname = pairs[i].substring(0, pos);   // Получение имени
+        var value = pairs[i].substring(pos + 1);    // Получение значения
+        argsObj[argname] = value;
+        // Сохранение как свойства
+    }
+
+    return argsObj;
+}
+// для теста примера перейдите по URL текущей страницы location + ?login=admin&password=123
+function parseIt() {
+    var args = getArgs();
+    var createParagraph = document.createElement("p");
+    createParagraph.innerHTML = "Login " + args.login + "<br />";
+    createParagraph.innerHTML += "Password " + args.password;
+    document.body.appendChild(createParagraph);
+}
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="Получить логин и пароль" onclick="parseIt()" />
+</body>
+</html>

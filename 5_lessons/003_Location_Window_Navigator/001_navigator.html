@@ -1,0 +1,43 @@
+<!-- Объект navigator содержит общую информацию о браузере и операционной системе. НЕ  СТОИТ ИСПОЛЬЗОВАТЬ ДЛЯ ПРОВЕРКИ И ОПРЕДЕЛЕНИЯ БРАУЗЕРА-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Navigator</title>
+</head>
+<body>
+
+    <p>Куки включены?</p>
+
+    <button onclick="myCookie()">Поверить</button>
+
+    <p id="cookie"></p>
+
+    <p>Какая ОС?</p>
+    <p id="platform"></p>
+    <button onclick="myPlatform()">Поверить</button>
+
+    <p>Какой язык браузера?</p>
+    <p id="language"></p>
+    <button onclick="myLang()">Поверить</button>
+    <script>
+        function myCookie() {
+            document.getElementById("cookie").innerHTML =
+            "Cookies enabled is " + navigator.cookieEnabled;
+        }
+
+        function myPlatform() { 
+            document.getElementById("platform").innerHTML = 
+            navigator.platform;
+        }
+
+
+        function myLang() { 
+            document.getElementById("language").innerHTML = 
+            navigator.language;
+        }
+
+        console.log(navigator);
+    </script>
+</body>
+</html>

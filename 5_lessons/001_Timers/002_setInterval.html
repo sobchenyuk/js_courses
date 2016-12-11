@@ -1,0 +1,30 @@
+<!-- В отличие от метода setTimeout, setInterval выполняет код много раз, через равные промежутки времени, пока не будет остановлен при помощи clearInterval. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>setInterval</title>
+</head>
+<body>
+    <p>Ждем 1 секунды</p>
+    <button onclick="myFunction()">Пробовать</button>
+
+    <script>
+
+    function myFunction() {
+        setInterval(function(){alert("Hello")}, 3000);
+    }
+
+
+
+    /*(function myFunction() {
+        setTimeout(function(){
+        	console.log("Hello");
+        	myFunction();
+        }, 1000);
+    })();*/
+
+    </script>
+
+</body>
+</html>

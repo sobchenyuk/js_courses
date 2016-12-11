@@ -1,0 +1,21 @@
+<!-- match() - принимает регулярное выражение и возвращает массив с результатами поиска. -->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>RexExp</title>
+</head>
+<body>
+
+<button onclick="myFunction()">Пробовать</button>
+
+<script>
+function myFunction() {
+    var str = "Lorem! Lorem ipsum dolor";
+    var patt = new RegExp("lorem", "gi");
+    var result = str.match(patt);
+    console.log(result);
+};
+</script>
+</body>
+</html>

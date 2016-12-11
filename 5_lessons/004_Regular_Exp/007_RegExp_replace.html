@@ -1,0 +1,22 @@
+<!-- replace() - Метод replace может заменять вхождения регулярного выражения не только на строку, но и на результат выполнения функции. -->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>RexExp</title>
+</head>
+<body>
+
+<p id="demo">Mr Blue has a blue house and a blue car.</p>
+
+<button onclick="myFunction()">Пробовать</button>
+
+<script>
+function myFunction() {
+    var str = document.getElementById("demo").innerHTML; 
+    var res = str.replace(/blue/gi, "red"); //регистронезав. рег.выражение
+    document.getElementById("demo").innerHTML = res;
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!-- Объект location предоставляет информацию о текущем URL и позволяет JavaScript перенаправить посетителя на другой URL. 
+Значением этого свойства является объект типа Location. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Location</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // location - URL адрес текущего документа.
+        document.write("location = " + document.location + "<br />");               // весь url
+        document.write("protocol  = " + document.location.protocol + "<br />");     // протокол
+        document.write("host  = " + document.location.host + "<br />");             // имя хоста
+        document.write("pathname  = " + document.location.pathname + "<br />");     // путь к запрашиваемому ресурсу
+        document.write("search  = " + document.location.search + "<br />");         // строка запроса (после знака вопроса)
+    </script>
+</body>
+</html>

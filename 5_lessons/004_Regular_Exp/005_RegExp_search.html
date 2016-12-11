@@ -1,0 +1,26 @@
+<!-- Возвращает индекс регулярного выражения в строке, или -1. -->
+<!-- Если Вы хотите знать, подходит ли строка под регулярное выражение, используйте метод search(аналогично RegExp-методы test). Чтобы получить больше информации, используйте более медленный метод match(аналогичный методу RegExp exec). -->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>RexExp</title>
+</head>
+<body>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, debitis.</p>
+    <button onclick="myFunction()">Пробовать</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            var str = " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, ut.";
+            var patt = new RegExp("e");
+            var res = str.search(patt); //Содержит ли строка символ e
+            document.getElementById("demo").innerHTML = res;
+        }
+    </script>
+
+</body>
+</html>

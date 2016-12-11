@@ -1,0 +1,61 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Строки</title>
+</head>
+<body>
+    <script>
+        // split - Разбивает строку на подстроки по указанному разделителю и возвращает массив подстрок.
+        var str = 'Строка для тестирования примера';
+        var substrs = str.split(' ');
+        console.log(substrs);
+
+        // charAt - возвращает символ по указанной позиции.
+        var firstChar = str.charAt(0);
+        var lastChar = str.charAt(str.length - 1);
+        console.log('first ' + firstChar, 'last ' + lastChar);
+
+        // indexOf - возвращает индекс первого встречающегося в строке указанного символа.
+        str = "ab-cd-ef-gh-ij";
+        var firstDash = str.indexOf("-");
+        console.log(firstDash);
+
+        // lastIndexOf - возвращает индекс последнего встречающегося в строке указанного символа.
+        str = "ab-cd-ef-gh-ij";
+        // не работает в IE8-
+        var lastDash = str.lastIndexOf("-"); 
+        console.log(lastDash);
+
+        // toLowerCase() - перевод всех символов в нижний регистр, toUpperCase() - перевод всех символов в верхний регистр.
+        str = "Hello World!!!";
+        str = str.toLowerCase();
+        console.log(str);
+
+        str = str.toUpperCase();
+        console.log(str);
+   
+        str = "Hello, world!";
+        substr = str.substring(6, 12); 
+        //substr = str.substring(12, 6); 
+        substr = str.substring(6); 
+        // с - включительно, по - не включительно
+        console.log(substr);
+
+        // // substr - возвращает строку начиная с указанного индекса, указанной длины.
+        str = "Hello, world!";
+        substr = str.substr(7, 5);
+        console.log(substr);
+
+        // slice(start, end)
+        str = "Hello, world!";
+        slice = str.slice(1);
+        //slice = str.slice(0, 5);
+        //slice = str.slice(-1);
+        //slice = str.slice(0, -1);
+        console.log(slice);
+
+
+    </script>
+</body>
+</html>

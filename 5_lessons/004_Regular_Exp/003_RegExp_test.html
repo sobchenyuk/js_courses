@@ -1,0 +1,26 @@
+<!-- Чтобы просто проверить, подходит ли строка под регулярное выражение -->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>RexExp</title>
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, debitis.
+    </p>
+    <button onclick="myFunction()">Пробовать</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            var str = "https:// Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, ut.";
+            var patt = new RegExp("https");
+            var res = patt.test(str); //Содержит ли строка символ https
+            document.getElementById("demo").innerHTML = res;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+<body>
+<!--     Создайте счетчик секунд, который начинает отчет с 1 и заканчивается на 30, также добавьте кнопки который останавливают отчет, и запускают его заново и добавьте кнопку обнуляющую отчет. Также попробуйте изменить код так чтобы отчет начиналься с 30 и заканчивалься на 1. -->
+    <p id="demoP"></p>
+    <input type="button" name="reset" value="Сброс" onclick="resetHandler()" >
+    <input type="button" name="reset" value="Старт" onclick="secondsCounter(this);" >
+    <input type="button" name="reset" value="Стоп" onclick="stopHandler()" >
+    <script>
+        var demoP = document.getElementById("demoP");
+        var second = 0;
+        function secondsCounter () {
+            startCounter = setInterval(function () {
+                    second++;
+                    demoP.innerHTML = second + " сек";
+            }, 1000);
+        };
+
+        function resetHandler () {
+            clearInterval(startCounter);
+            second = 0;
+            demoP.innerHTML = second + " сек";
+        };
+
+        function stopHandler () {
+            clearInterval(startCounter);
+        };
+    </script>
+</body>
+</html>

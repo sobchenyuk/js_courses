@@ -1,0 +1,20 @@
+<!-- загрузить документ по данному url. Можно и просто приравнять window.location.href = url. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Location</title>
+    <script>
+        function newDoc() {
+            window.location.assign("http://github.com/");
+        }
+        function reload() {
+            location.reload();
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Загрузить новый документ" onclick="newDoc()">
+    <input type="button" value="Перегрузить страницу" onclick="reload()">
+</body>
+</html>

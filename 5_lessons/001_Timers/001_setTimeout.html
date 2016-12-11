@@ -1,0 +1,32 @@
+<!-- 
+    setTimeout - метод выполняет код(или функцию), указанный в первом аргументе, асинхронно, с задержкой в delay миллисекунд. setTimeout выполняет код только один раз
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>setTimeout</title>
+</head>
+<body>
+    <p>Ждем 1 секунду.</p>
+
+    <button onclick="myFunction()">Пробовать</button>
+
+    <script>
+        function myFunction() {
+            setTimeout(function(){alert("Hello")}, 3000);
+        }
+
+        /*for (var i = 0, l = 10; i < l; i++) {
+        	setTimeout(function(){console.log(i)}, 1000);
+        };*/
+
+        /*for (var i = 0; i <= 10; i++) {
+            (function(index){
+              setTimeout(function() { console.log(index) }, 1000);
+            })(i);
+        }*/
+
+    </script>
+</body>
+</html>

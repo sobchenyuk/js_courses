@@ -1,0 +1,33 @@
+<!-- Метод exec возвращает массив и ставит свойства регулярного выражения. Всегда возвращает только одно значение или null.
+При глобальном поиске (флаг g) метод возвращает найденную подстроку и продолжает поиск далее по строке.
+Если совпадений нет, то возвращается null. -->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>RexExp</title>
+</head>
+<body>
+
+<button onclick="myFunction()">Пробовать</button>
+
+<p id="demo"></p>
+
+<script>
+
+function myFunction() {
+    var myRe = /аб/g, 
+    	str = 'аббвгдеабж', 
+    	myArray;
+
+    while ((myArray = myRe.exec(str)) !== null) {
+      var msg = 'Найдено ' + myArray[0] + '. ';
+      msg += 'Следующее сопоставление начнётся с позиции ' + myRe.lastIndex;
+      console.log(msg);
+    }
+            
+ };
+</script>
+
+</body>
+</html>

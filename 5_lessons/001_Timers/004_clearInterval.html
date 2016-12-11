@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>clearInterval</title>
+</head>
+<body>
+   <p id="demo"></p>
+
+   <button onclick="myStopFunction()">Остановить время</button>
+
+   <script>
+        var timeInterval = 1000;
+        var myVar = setInterval(myTimer, timeInterval);
+
+        function myTimer() {
+            var localDate = new Date();
+            var localTime = localDate.toLocaleTimeString();
+            document.getElementById("demo").innerHTML = localTime;
+        }
+
+        function myStopFunction() {
+            clearInterval(myVar);
+        }
+
+    </script>
+</body>
+</html>

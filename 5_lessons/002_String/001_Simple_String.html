@@ -1,0 +1,32 @@
+<!-- 
+\b  Backspace
+\f  Form feed
+\n  New line
+\r  Carriage return
+\t  Tab 
+-->
+
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Строки</title>
+</head>
+<body>
+<div class="id"></div>
+
+    <script>
+        var text = 'моя строка';
+        console.log(text);
+        var anotherText = "321";
+        console.log(anotherText);
+        var issueText = 'Мы болеем за ФК "Металлист" и  П\'яченцу';
+
+        var div = document.querySelector('.id');
+        div.innerHtml = issueText;
+        
+        console.log(issueText);
+        console.log('Привет\nМир');
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// POP - удаление последнего элемента из массива
+		var language = ["JavaScript", "Ruby", "Java", "Bash"];
+		language.pop();
+		console.log(language);
+
+		var language = ["JavaScript", "Ruby", "Java", "Bash"],
+			remove = language.pop();
+		console.log(remove);
+
+		// Shift - удаление первого єлемента массива
+		var language = ["JavaScript", "Ruby", "Java", "Bash"];
+		language.shift();
+		console.log(language);
+
+		var language = ["JavaScript", "Ruby", "Java", "Bash"],
+			remove = language.shift();
+		console.log(remove);
+
+
+		// Unshift - добавление элемента в начало массива
+		var language = ["JavaScript", "Ruby", "Java", "Bash"];
+			language.unshift("PHP");
+		console.log(language);
+
+
+		// Push вставка в массив
+		var language = ["JavaScript", "Ruby", "Java", "Bash"];
+		language.push("PHP");
+		console.log(language);
+
+		var language = ["JavaScript", "Ruby", "Java", "Bash"],
+			push = language.push("PHP");
+		console.log(push);
+
+
+		// Delete keys
+		var language = ["JavaScript", "Ruby", "Java", "Bash", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint mollitia ipsum possimus. Recusandae quis ab repellendus sequi cum sed illo, minima dignissimos, voluptas necessitatibus hic temporibus ipsam. Beatae consequatur, amet."];
+		delete language[2];
+		console.log(language[2]);
+
+
+		// Splice - вставка или удаление индексов массива
+		var language = ["JavaScript", "Ruby", "Java", "Bash"];
+		language.splice(2, 0, "PHP", "Python");
+		// 2 - Вставка перед вторым индексом
+		// 0 - Не удаляя элементы а сдвигая их
+		console.log(language);
+
+
+		var language = ["JavaScript", "Ruby", "Java", "Bash"];
+		language.splice(0, 2);
+		// 0 - начало удаления
+		// 2 - по не включительно
+		console.log(language);
+
+		// Concat - соеденение массивов
+		var arr1 = ["JavaScript"];
+		var arr2 = ["Ruby"];
+		var arr3 = ["Java", "Bash"];
+		var language = arr1.concat(arr2, arr3);
+		console.log(language);
+
+		// Join - приведение массива в строку
+		var language = ["JavaScript", "Ruby", "Java", "Bash"],
+			join = language.join("+");
+		console.log(join);
+
+		// Slice - обрезка массива (Создание нового)
+		var language = ["JavaScript", "Ruby", "Java", "Bash"],
+			slice = language.slice(0, 2);
+		// 0 - с включительно
+		// 2 - по не включительно
+		console.log(slice);
+
+		// Sort - сортировка массива по алфавиту
+		var language = ["JavaScript", "Ruby", "Java", "Bash", 1];
+		language.sort();
+		console.log(language);
+
+		// Reverse - изменение направления массива
+		var language = ["JavaScript", "Ruby", "Java", "Bash"];
+		language.reverse();
+		console.log(language);
+
+	</script>
+	
+</body>
+</html>
