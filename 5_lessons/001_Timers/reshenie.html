@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div class="timer"></div>
+
+<div class="text"></div>
+
+
+<hr>
+<br>
+
+<button onclick="obj.stopTimer()">Остановить таймер</button>
+<button onclick="obj.runTimer()">Запустить таймер</button>
+<button onclick="obj.clearTimer()">Обнулить таймер</button>
+<button onclick="obj.reversTimer()">Отсчет в обратном порядке</button>
+
+<script>
+
+    var obj = (function () {
+
+        return {
+
+            initTimer: function () {
+                i = 0;
+                var timeInterval = 1000;
+                myVar = setInterval(obj.myTimer, timeInterval);
+                delete a;
+            },
+            myTimer: function () {
+                if (i > 30 - 1) {
+                    clearInterval(myVar);
+                    document.querySelector('.text').innerText = "";
+                    document.querySelector('.text').innerHTML += '<h5>Таймер успешно остановлен по окончании отсчета</h5>';
+                } else {
+                    i++;
+                    document.querySelector('.timer').innerHTML = i;
+                }
+            },
+            stopTimer: function () {
+                clearInterval(myVar);
+                if (document.querySelector('.text').innerHTML) {
+
+                } else {
+                    document.querySelector('.text').innerHTML += '<p>Таймер успешно остановлен по нажатию на цифре ' +
+                            '<b>' + i + '</b>' +
+                            '</p>';
+                }
+            },
+            runTimer: function () {
+
+                clearInterval(myVar);
+
+
+                document.querySelector('.text').innerText = "";
+
+                document.querySelector('.text').innerHTML += '<p>Приготовьтесь таймер запускается заново </p>';
+
+                setTimeout(function () {
+                    document.querySelector('.text').innerText = "";
+                    delete a;
+                    obj.initTimer();
+                }, 2000);
+
+            },
+            clearTimer: function () {
+                clearInterval(myVar);
+
+                document.querySelector('.timer').innerText = "";
+                document.querySelector('.timer').innerText = 0;
+
+
+                document.querySelector('.text').innerText = "";
+
+                document.querySelector('.text').innerHTML += '<p>Таймер обнулен </p>';
+
+            },
+            reversTimer: function () {
+                document.querySelector('.text').innerText = "";
+                document.querySelector('.timer').innerText = "";
+
+                document.querySelector('.text').innerHTML += '<p>Таймер считает в обратном порядке </p>';
+                delete i;
+                clearInterval(myVar);
+                a = 30;
+
+                var timeIntervalTwo = 1000;
+
+                    myVarTwo = setInterval(obj.myTimerTwo, timeIntervalTwo);
+
+            },
+            myTimerTwo: function () {
+
+
+                if (a < 1) {
+                    clearInterval(myVarTwo);
+                    document.querySelector('.text').innerText = "";
+                    document.querySelector('.text').innerHTML += '<h5>Таймер успешно остановлен по окончании отсчета</h5>';
+                } else {
+                    a--;
+                    document.querySelector('.timer').innerHTML = a;
+                }
+            }
+
+        };
+    })();
+
+    obj.initTimer();
+
+
+</script>
+
+</body>
+</html>
