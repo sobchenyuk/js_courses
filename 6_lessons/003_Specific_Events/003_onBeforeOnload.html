@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>onBeforeUnload</title>
+</head>
+<body>
+<script>
+    function setHandler() {
+      window.onbeforeunload = function() { 
+        // событие на закрытие вкладки
+        
+        return "Данные не сохранены. Точно перейти?";
+      };
+    };
+</script>
+
+<button onclick="setHandler()">Поставить window.onbeforeunload</button>
+
+<a href="http://uitschool.com/">Уйти</a>
+</body>
+</html>

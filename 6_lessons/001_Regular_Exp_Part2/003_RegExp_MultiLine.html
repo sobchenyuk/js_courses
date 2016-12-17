@@ -1,0 +1,20 @@
+<!-- Для того, чтобы выбрать ВСЕ - используйте [\s\S]. -->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>RexExp</title>
+</head>
+<body>
+    <script>
+        function grabTag(tagText) {
+            var tagText = tagText.match(/(<b>)([\s\S]*)(<\/b>)/i);
+            return tagText;
+        };
+
+    var line = "<b>мой\n текст</b>";
+    console.log(grabTag(line));
+    </script>
+
+</body>
+</html>

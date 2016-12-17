@@ -1,12 +1,48 @@
 <!-- 
-    Запросите у пользователя ввести какую-то фразу. Отобразите каждое отдельное слово в виде списка ul li. Также отобразите первое слово UPPERCASE, а последние 2 с маленькой. Найдите все буквы "а"  их количество выведите в модальное окно. 
+    Запросите у пользователя ввести какую-то фразу. Отобразите каждое отдельное слово в виде списка ul li.
+    Также отобразите первое слово UPPERCASE, а последние 2 с маленькой. Найдите все буквы "а"
+    их количество выведите в модальное окно.
  -->
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Homework</title>
+
+
+    <style>
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
+<div class="form">
+<label for="exampleInputText">Введите какой нибудь текст</label>
+    <br>
+<input type="text" id="exampleInputText" name="Text">
+    <br>
+    <div>Ваш результат</div>
+    <ul id="Text"></ul>
+</div>
+
+
+<script>
+
+
+    var input = document.querySelector('#exampleInputText');
+
+    input.oninput = function() {
+
+        document.getElementById('Text').innerHTML = input.value;
+
+    };
+
+</script>
+
+
+
 </body>
 </html>

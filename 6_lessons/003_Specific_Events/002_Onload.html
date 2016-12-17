@@ -1,0 +1,21 @@
+<!-- Браузер позволяет отслеживать загрузку внешних ресурсов — скриптов, ифреймов, картинок и других. onload — если загрузка успешна. -->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>onLoad</title>
+    <script>
+        window.onload = function () {
+            alert("window is loaded!");
+        };
+    </script>
+</head>
+<body>
+    <img src="javascript.jpg" onload="loadImage()" width="100" height="132">
+    <script>
+        function loadImage() {
+            alert("Image is loaded");
+        };
+    </script>
+</body>
+</html>

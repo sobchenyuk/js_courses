@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ключевое слово this</title>
+    <style>
+        div {
+            background-color:green;
+            display: inline-block;
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        var divArr = document.getElementsByTagName("div");
+        for (var i = 0; i < divArr.length; i++) {
+            divArr[i].onclick = function () {
+                if(this.style.backgroundColor  == 'red'){
+                    this.style.backgroundColor = "green";
+                } else {
+                   this.style.backgroundColor  = 'red' 
+                }
+                
+            };
+        };
+    </script>
+</script>
+</body>
+</html>

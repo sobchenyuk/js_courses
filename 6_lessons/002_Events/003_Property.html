@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Обработчик как свойство</title>
+</head>
+
+<body>
+    
+    <p id="demo1">
+       Нажми на меня
+    </p>
+
+    <p id="demo2">
+        Нажми на меня
+    </p>
+
+    <script type="text/javascript">
+
+        var firtsParagraph = document.getElementById("demo1");
+        var secondParagraph = document.getElementById("demo2");
+
+        firtsParagraph.onclick = function () { 
+            console.log("Hello World!");
+        };
+
+        secondParagraph.onclick = clickHandler;
+
+        function clickHandler() {
+            console.log("hello world");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ключевое слово this</title>
+</head>
+<body>
+    <div onclick="alert(this.innerHTML)" id="handler">Нажми меня</div>
+    <br />
+    <input type="button" value="Нажми!" />
+    <input type="button" value="Нажми!" />
+    <input type="button" value="Нажми!" />
+    <input type="button" value="Нажми!" />
+        <script>
+            var clikckInput = document.getElementsByTagName("input");
+            for (var i = 0 ; clikckInput.length > i; i++) {
+                clikckInput[i].onclick = function () {
+                // ссылаемся на элемент в котором произошло событие
+                    this.value = "Кликнуто!";
+                };
+            };
+    </script>
+</body>
+</html>

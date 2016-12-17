@@ -1,0 +1,15 @@
+<!-- () - Если часть регулярного выражения заключена в круглые скобки, то соответствующая ей подстрока будет запомнена для последующего использования. Для доступа к запомненным подстрокам используются свойства $1, :, $9 объекта RegExp или элементы массива, возвращаемого методами exec и match -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        var re = /(\w+)\s(\w+)/i;
+        var str = "Mikhail Bulgakov";
+        document.write(str.replace(re, "$2 $1"));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

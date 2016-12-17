@@ -1,0 +1,17 @@
+<!-- Все регулярные выражения в javascript - жадные. То есть, выражение старается отхватить как можно больший кусок строки. -->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>RexExp</title>
+</head>
+<body>
+<script>
+    var text = 'some text <a href="#"> link to some site </a> another text';
+
+    var ourLink = text.match(/<a (.*)>/);
+    console.log(ourLink);
+</script>
+
+</body>
+</html>

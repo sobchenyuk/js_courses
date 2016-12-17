@@ -1,0 +1,45 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Примеры регулярных выражений</title>
+    <script>
+        // 21-12-2014
+        var pattern = /^\d{2}-\d{2}-\d{4}$/;
+        var text = "21-02-2014";
+        document.write("<h4>Дата</h4><br />" + text + " -> " + pattern.test(text) + "<br />");
+
+        // +38 (093) 123-45-67
+        pattern = /^\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
+        text = "+38 (093) 123-45-67";
+        document.write("<h4>Телефон</h4><br />" + text + " -> " + pattern.test(text) + "<br />");
+
+        // Иванов Иван Иванович
+        pattern = /[а-яА-Я]+[а-яА-Я]+[а-яА-Я]/;
+        text = "Иванов Иван Иванович";
+        document.write("<h4>ФИО</h4><br />" +text + " -> " + pattern.test(text) + "<br />");
+
+        // ivanov.ivan@example.com
+        pattern = /[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}/i;
+        text = "ivanov.ivan@example.com";
+        document.write("<h4>Email</h4><br />" + text + " -> " + pattern.test(text) + "<br />");
+
+        // hello.html
+        pattern = /\w\.html/;
+        text = "hello.html";
+        document.write("<h4>Html Document</h4><br />" + text + " -> " + pattern.test(text) + "<br />");
+
+        // http://uitschool.com/ или https://uitschool.com/
+        pattern = /https?:\/\/[\w\d:\.:\?\&]+com/g;
+        text = "http://uitschool.com/ или https://uitschool.com/ blah-blah-blah http://www.google.com";
+        var res;
+        while ((res = pattern.exec(text)) != null) {
+            document.write("Найдено " + res + " по индексу " + res.index + "<br />");
+        }
+
+        //https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5_%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F
+    </script>
+</head>
+<body>
+</body>
+</html>
