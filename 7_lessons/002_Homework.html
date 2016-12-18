@@ -1,0 +1,50 @@
+    <!-- Создайте 5 блоков с текстом. Добавьте в каждый из блоков кнопку для его удаления. Используйте только один обработчик. -->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    <style>
+    div {
+        border: 1px solid red;
+        margin: 10px 0;
+        padding: 10px;
+    }
+    </style>
+    <script>
+        window.onload = function () {
+            var hideContainer = document.getElementById("container");
+            var removeEL = document.getElementById("remove");
+
+            hideContainer.addEventListener("click", hideContainerHolder);
+            function hideContainerHolder (e) {
+                var target = e && e.target || event.srcElement;
+                this.removeChild(target.parentNode);
+            };
+            removeEL.addEventListener("click", function () {
+                hideContainer.removeEventListener("click", hideContainerHolder);
+            } );
+        };
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est laborum dignissimos, ipsam minus? Ea nesciunt ratione, molestias corporis natus temporibus id iste quas aliquam voluptate ipsa consectetur ab perferendis!<br/>
+            <button class="hidecontent">Hide</button>
+        </div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad numquam tempora magni sint obcaecati aperiam eveniet totam optio magnam dolor et perspiciatis dolores, delectus similique repellendus saepe hic quod, fugit!<br/>
+            <button class="hidecontent">Hide</button>
+        </div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum inventore id aliquid ipsa labore aspernatur asperiores esse accusamus eum, facilis autem, cumque sed quam! Vitae maxime obcaecati, cumque ipsum laboriosam!<br/>
+            <button class="hidecontent">Hide</button>
+        </div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo sequi odit quisquam quis quia minima, tenetur rem velit, facilis nisi accusantium nesciunt! Ad in repellat adipisci totam laborum, voluptatem pariatur!<br/>
+            <button class="hidecontent">Hide</button>
+        </div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam iusto quaerat, aliquid fugit cumque quidem perferendis necessitatibus porro, consequatur expedita ad iure tenetur animi, quos sed. Dolor velit sed obcaecati.<br/>
+            <button class="hidecontent">Hide</button>
+        </div>
+    </div>
+    <button id="remove">removeEventListener</button>
+</body>
+</html>

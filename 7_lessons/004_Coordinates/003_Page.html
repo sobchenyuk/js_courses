@@ -1,0 +1,21 @@
+<!-- elementFromPoint - получить элемент по координатам в документе -->
+<!DOCTYPE html>
+<html >
+<head>
+    <title>elementFromPoint</title>
+    <script>
+    function changeColor(newColor) {
+      elem = document.elementFromPoint(25, 25);
+      elem.style.color = newColor;
+    }
+    </script>
+</head>
+<body>
+    <p id="para1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A in minima quae accusamus error iure similique, libero ea, officiis labore totam nulla. Laborum sunt, praesentium nemo debitis, velit ipsa ad!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae illo optio doloribus dolorum commodi amet nisi incidunt labore hic, quia neque quos. Dolorum, similique reprehenderit! Quis quo hic dolorem reiciendis!</p>
+     <p id="para2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A in minima quae accusamus error iure similique, libero ea, officiis labore totam nulla. Laborum sunt, praesentium nemo debitis, velit ipsa ad!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae illo optio doloribus dolorum commodi amet nisi incidunt labore hic, quia neque quos. Dolorum, similique reprehenderit! Quis quo hic dolorem reiciendis!</p>
+    <button onclick="changeColor('blue');">blue</button>
+    <button onclick="changeColor('red');">red</button>
+</body>
+</html>

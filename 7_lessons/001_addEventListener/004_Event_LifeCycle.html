@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Всплытие</title>
+    <style>
+        #child {
+            background-color:red;
+            width:150px;
+            height:150px;
+            margin: 75px auto;
+            border: 2px solid black;
+
+        }
+        #parent {
+            border: 2px solid black;
+            background-color: green;
+            width:300px;
+            height:300px;
+        }
+        #childinchild {
+            background-color:yellow;
+            width:75px;
+            height:75px;
+            margin: 33px auto;
+            border: 2px solid black;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">parent
+        <div id="child">child
+            <div id="childinchild">
+                childinchild
+            </div>
+        </div>
+    </div>
+    <script>
+        var divParent = document.getElementById("parent");
+        var divChild= document.getElementById("child");
+        var divChildInChild= document.getElementById("childinchild");
+        
+        divParent.addEventListener("click", function () {
+            alert("parent");
+            this.style.backgroundColor = "yellow";
+        }, false);
+
+        divChild.addEventListener("click", function () {
+            alert("child");
+            this.style.backgroundColor = "green";
+        }, false);
+
+        divChildInChild.addEventListener("click", function () {
+            alert("childinchild");
+            this.style.backgroundColor = "blue";
+        }, false);
+
+    </script>
+</body>
+</html>

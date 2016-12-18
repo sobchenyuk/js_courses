@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+      <meta charset="utf-8">
+      <title>Delegate</title>
+      <script>
+      window.onload = function () {
+          var menu = document.getElementById('menu');
+
+          menu.addEventListener("click",  function(e) {
+            var href = this.getAttribute('href');
+            console.log(this);
+            alert(href);
+            e.preventDefault();
+            return false // отменить переход по ссылке
+          });
+      };
+    </script>
+      </script>
+</head>
+<body>
+
+    <ul id="menu">
+        <li>
+            <a href="/one">1</a>
+        </li>
+        <li>
+            <a href="/two">2</a>
+        </li>
+        <li>
+            <a href="/three">3</a>
+        </li>
+        <li>
+            <a href="/four">4</a>
+        </li>
+    </ul>
+</body>
+</html>

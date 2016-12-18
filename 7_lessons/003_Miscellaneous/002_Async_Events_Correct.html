@@ -1,0 +1,29 @@
+<!-- Вы увидите, что событие onfocus — синхронное. Его обработчик onfocus не становится в очередь, а выполняется тут же, до завершения onclick: -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Async Events</title>
+    <script>
+    window.onload = function () {
+        var myFocus = document.getElementById("myfocus");
+        var fakeFocus = document.getElementById("fakefocus")
+        myFocus.addEventListener("focus", function () {
+            this.style.color = "red";
+            console.log("focus");
+        });
+        fakeFocus.addEventListener("click", function () {
+            console.log("click");
+            setTimeout(function() {
+                myFocus.focus(); 
+            }, 0);
+            console.log("click after");
+        });
+    };
+    </script>
+</head>
+<body>
+<input type="text" id="myfocus">
+<button id="fakefocus">Фокус</button>
+</body>
+</html>

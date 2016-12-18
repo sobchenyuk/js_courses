@@ -1,0 +1,36 @@
+<!-- clientX(clientY) -  свойство, которое содержит координаты относительно window. -->
+
+<!-- Если ваше окно размером 500x500, а мышь находится в центре, тогда и pageX и pageY будут равны 250. Если вы прокрутите страницу на 250 пикселей вниз, то значение pageY станет равным 500. Итак, пара pageX/pageY содержит координаты относительно левого верхнего угла документа, вместе со всеми прокрутками. -->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Координаты</title>
+</head>
+<body>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/><br/>
+    <br/><br/><br/>
+    <br/><br/><br/><br/>
+        <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/><br/>
+    <br/><br/><br/>
+    <input onmousemove="this.value = event.clientX+':'+event.clientY"><br/>
+    <input id="second" onmousemove="this.value = event.pageX+':'+event.pageY">
+    <br/><br/>
+    <br/><br/><br/>
+    <br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>

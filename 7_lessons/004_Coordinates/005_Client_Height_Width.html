@@ -1,0 +1,35 @@
+<!-- Свойства clientWidth/Height для элемента позволяют получить ширину/высоту видимой элемента (ширина/высота + padding). -->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Client Height/Width</title>
+    <style>
+        .adholder__item--adsense {
+            height: 20px;
+            padding: 20px;
+            border: 20px solid red;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+        var allAds = document.querySelectorAll(".adholder__item, .adholder__item--adsense");
+        for (var i = 0, l = allAds.length; i < l; i++) {
+            console.log(allAds[i].clientHeight);
+            console.log(allAds[i].clientWidth);
+            if (allAds[i].clientHeight < 50) { // !! удобнее чем обращение через стили (getComputedStyle или .style)
+               allAds[i].style.display = "none";
+            };
+        };
+    };
+    </script>
+</head>
+<body>
+    <div class="adholder__item">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus ab ipsam quod corporis animi ipsum quos veritatis nemo sapiente harum, eligendi, consequuntur, illo sint perferendis voluptatibus aliquid! Repudiandae, perspiciatis nihil!
+    </div>
+    <div class="adholder__item--adsense">
+    </div>
+</body>
+</html>

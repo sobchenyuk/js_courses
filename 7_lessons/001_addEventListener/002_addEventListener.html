@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Установка обработчика addEventListener</title>
+    <script type="text/javascript">
+    window.onload = function () {
+        // element.addEventListener( event, handler, phase);
+        var firstBtn = document.getElementById("mybutton");
+        var secondBtn = document.getElementById("nextbutton");
+        // Установка обработичка на событие click для кнопки с id mybutton
+        firstBtn.addEventListener("click",
+            function () {
+                alert("Обработчик установлен");
+            }
+        );
+
+        secondBtn.addEventListener("click", clickHandlerFirst);
+        secondBtn.addEventListener("click", clickHandlerSecond);
+
+        function clickHandlerFirst() {
+            alert("Сработало!");
+        };
+
+        function clickHandlerSecond () {
+            alert("этот тоже сработал!");
+        };
+    };
+    </script>
+</head>
+<body>
+    <button id="mybutton">Кнопка</button>
+    <button id="nextbutton">Кнопка 2</button>
+</body>
+</html>

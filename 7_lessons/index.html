@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin: 0;
+	}
+	div{
+		width: 200px;
+		height: 200px;
+		overflow: hidden;
+	}
+	ul{
+		list-style: none;
+		padding: 0;
+		position: relative;
+	}
+	li {
+		width: 200px;
+		height: 200px;
+		float: left;
+	}
+	span{
+		display: block;
+		color: black;
+	}
+</style>
+<body>
+	<div>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</div>
+	<span>next</span>
+	<script>
+		(function(){
+			var ul = document.querySelector('ul'),
+				span = document.querySelector('span'),
+				count = ul.children.length,
+				static = parseInt(getComputedStyle(ul.parentNode).getPropertyValue('width')),
+				width = static * count,
+				limit = -(static * (count - 1));
+
+			createStyle('width', width, ul);
+
+			span.onclick = handler;
+
+			function handler() {
+				var left = isNaN(parseInt(ul.style.left)) ? 0 : parseInt(ul.style.left);
+				if(left == limit){
+					return;
+				} else {
+					createStyle('left', (left - static), ul);
+				}
+			}
+
+			function createStyle(prop, args, el){
+				el.style.cssText += prop+":"+args+"px";
+			}
+			
+		})();
+	</script>
+</body>
+</html>

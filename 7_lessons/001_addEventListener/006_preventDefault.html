@@ -1,0 +1,30 @@
+<!-- preventDefault - функция отменяющая действие по умолчанию для события -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>preventDefault</title>
+    <style>
+        #child {
+            background-color:red;
+            width:150px;
+            height:150px;
+            margin: 75px auto;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <a id="parent" href="http://uitschool.com/">parent</a>
+    <script>
+        var divParent = document.getElementById("parent");
+        divParent.addEventListener("click", function (e) {
+            // preventDefault - позволяет отменить действие по умолчанию, которое связанно с событием.
+            alert("parent");
+            this.style.backgroundColor = "yellow";
+            e.preventDefault();
+            return false; // Для //старых браузеров
+        });
+    </script>
+</body>
+</html>

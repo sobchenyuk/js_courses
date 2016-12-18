@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Установка обработчика addEventListener</title>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            // element.removeEventListener( event, handler, phase);
+
+            var firstBtn = document.getElementById("mybutton");
+            var secondBtn = document.getElementById("nextbutton");
+            var removeMyButton = document.getElementById("removemybutton");
+            var removeNextButton = document.getElementById("removenextbutton");
+            // Установка обработичка на событие click для кнопки с id mybutton
+            firstBtn.addEventListener("click",
+                function () {
+                    alert("Обработчик установлен");
+                }
+            );
+
+            removeMyButton.addEventListener("click", removeHandlerFromFirst);
+            
+            function removeHandlerFromFirst () {
+                firstBtn.removeEventListener("click"); // не будет работать, всегда называйте обработчики
+            }
+
+            secondBtn.addEventListener("click", clickHandler);
+
+            function clickHandler () {
+                alert("Сработало!");
+            };
+
+            removeNextButton.addEventListener("click", removeHandler); 
+
+            function removeHandler () {
+                secondBtn.removeEventListener("click", clickHandler);  // работает аналогично с clearTimeout
+            };
+
+            
+        };
+    </script>
+</head>
+<body>
+    <button id="mybutton">Кнопка</button>
+    <button id="nextbutton">Кнопка 2</button>
+    <button id="removemybutton">убрать обработчик с Кнопка</button>
+    <button id="removenextbutton">убрать обработчик с Кнопка 2</button>
+</body>
+</html>

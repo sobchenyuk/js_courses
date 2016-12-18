@@ -1,0 +1,43 @@
+<!-- Элементы DOM могут быть вложены друг в друга. При этом обработчик, привязанный к родителю, срабатывает, даже если посетитель кликнул по потомку.
+
+Это происходит потому, что событие всплывает. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Всплытие</title>
+    <style>
+        #child {
+            background-color:red;
+            width:150px;
+            height:150px;
+            margin: 75px auto;
+            border: 2px solid black;
+
+        }
+        #parent {
+            border: 2px solid black;
+            background-color: green;
+            width:300px;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">parent
+        <div id="child">child</div>
+    </div>
+    <script>
+        var divParent = document.getElementById("parent");
+        var divChild = document.getElementById('child');
+
+        divParent.onclick = function () {
+            alert("onclick в родителе");
+        };
+
+        divChild.onclick = function () {
+            alert("onclick в потомке");
+        };
+    </script>
+</body>
+</html>

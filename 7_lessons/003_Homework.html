@@ -1,0 +1,44 @@
+<!-- Доработайте пример 004_Attr_Tech.html таким образом, чтобы при наведении на span элементы, подсказка сплыва под ними, а не в модальном окне -->
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    .tooltip-content {
+      position: absolute;
+      border: 1px solid #ccc;
+      padding: 3px;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var mainDiv = document.getElementById("main-div");
+      mainDiv.onmouseover = function (e) {
+        var target = e && e.target || window.event.srcElement;
+        var dataToggleId = target.getAttribute('data-tooltip');
+        if (!dataToggleId) return;
+        var tooltip = document.createElement("div");
+        tooltip.innerHTML = dataToggleId;
+        tooltip.className = "tooltip-content";
+        target.appendChild(tooltip);
+        target.onmouseout = function () {
+          var mouseOutTooltip = null;
+          for (var i = 0; target.childNodes.length > i; i++) {
+            if (target.childNodes[i].className == "tooltip-content") {
+              mouseOutTooltip = target.childNodes[i];
+              mouseOutTooltip.parentNode.removeChild(mouseOutTooltip);
+            }
+          };
+        };
+      };
+    };
+  </script>
+</head>
+<body>
+  <div id="main-div">
+    <span data-tooltip="наведите">наведите</span> 
+    <span data-tooltip="для">для</span> 
+    <span data-tooltip="подсказки">подсказки</span>
+  </div>
+</body>
+</html>
