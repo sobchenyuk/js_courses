@@ -3,9 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <title>Homework</title>
+    <style>
+        li {
+            list-style-type: none;
+        }
+        div {
+            color: #fff;
+            background-color: red;
+            font-weight: 700;
+            display: table;
+            margin: 5px 0;
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Создайте 5 блоков с текстом. Добавьте в каждый из блоков кнопку для его удаления. Используйте только один обработчик. -->
-    <!-- Доработайте пример 004_Attr_Tech.html таким образом, чтобы при наведении на span элементы, подсказка сплыва под ними, а не в модальном окне. Используйте addEventListener -->
+
+
+    <!-- Создайте 5 блоков с текстом. Добавьте в каждый из блоков кнопку для его удаления.
+    Используйте только один обработчик. -->
+    
+    <!-- Доработайте пример 004_Attr_Tech.html таким образом,
+    чтобы при наведении на span элементы, подсказка сплыва под ними,
+    а не в модальном окне. Используйте addEventListener -->
+
+
+
+
+<ul id="block">
+    <li>
+    <a href="#" data-tooltip="Первый блок">Первый блок</a>
+    </li>
+    <li>
+    <a href="#" data-tooltip="Второй блок">Второй блок</a>
+    </li>
+    <li>
+    <a href="#" data-tooltip="Третий блок">Третий блок</a>
+    </li>
+    <li>
+    <a href="#" data-tooltip="Четвертый блок">Четвертый блок</a>
+    </li>
+    <li>
+    <a href="#" data-tooltip="Пятый блок">Пятый блок</a>
+    </li>
+    <li>
+    <a href="#" data-tooltip="Шестой блок">Шестой блок</a>
+    </li>
+</ul>
+
+    <script>
+
+        (function () {
+            var block,newDiv,target,parentDiv,dataToggleId;
+            block =  document.getElementById('block');
+
+            block.addEventListener("click",  function(e) {
+                newDiv = document.createElement("div");
+                target = e.target || e.srcElement;
+                parentDiv = target.parentNode;
+                dataToggleId = target.getAttribute('data-tooltip');
+                if(dataToggleId){
+                    parentDiv.insertBefore(newDiv, target);
+                    newDiv.innerHTML = 'Я ' + dataToggleId;
+                    target.style.display = 'none';
+                }
+                e.preventDefault();
+                return false;
+            });
+
+        })();
+
+    </script>
+
 </body>
 </html>
