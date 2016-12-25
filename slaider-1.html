@@ -12,6 +12,7 @@
 		width: 200px;
 		height: 200px;
 		overflow: hidden;
+		margin: auto;
 	}
 	ul{
 		list-style: none;
@@ -22,10 +23,39 @@
 		width: 200px;
 		height: 200px;
 		float: left;
+		text-align: center;
+		padding-top: 6%;
+		font-size: 75px;
+		color: #fff;
+		font-family: sans-serif;
 	}
-	span{
-		display: block;
-		color: black;
+	#play {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		height: auto;
+		margin-top: 7px;
+	}
+	.next,
+	.prev,
+	.autoplay {
+		width: calc(50% - 20px);
+		border: 1px solid;
+		border-radius: 5px;
+	}
+	.autoplay{
+		width: 100%;
+		margin-top: 7px;
+	}
+	.next:hover,
+	.prev:hover,
+	.autoplay:hover {
+		background-color: darkturquoise;
+	}
+	span {
+		float: left;
+		text-align: center;
+		cursor: pointer;
 	}
 </style>
 <body>
@@ -33,40 +63,73 @@
 		<ul>
 			<li style="background: red">1</li>
 			<li style="background: green">2</li>
-			<li style="background: red">3</li>
-			<li style="background: green">4</li>
+			<li style="background: blue">3</li>
+			<li style="background: blueviolet">4</li>
 		</ul>
 	</div>
 	<div id="play">
-		<a href="#" data-controls="next">next</a>
-		<a href="#" data-controls="pre">prev</a>
+		<span data-controls="next" class="next">next</span>
+		<span data-controls="prev" class="prev">prev</span>
+		<span data-controls="autoplay" class="autoplay">autoplay</span>
 	</div>
 	<script>
-		(function(){
-			var ul = document.querySelector('ul'),
-				count = ul.children.length,
-				static = parseInt(getComputedStyle(ul.parentNode).getPropertyValue('width')),
-				width = static * count,
-				play =  document.getElementById('play');
-			createStyle('width', width, ul);
-			play.addEventListener("click",  function(e) {
-				var target = e.target || e.srcElement;
-				dataToggleId = target.getAttribute('data-controls');
-				if(dataToggleId == 'next'){
-					var firstLi = ul.firstElementChild,
+		var module = (function () {
+			var ul, count, static, play, width, target, timeInterval,myVar,
+					cloned, firstLi, listLi,dataToggleId;
+			return {
+				mayFunc: function (e) {
+					target = e.target || e.srcElement;
+					dataToggleId = target.getAttribute('data-controls');
+					if (dataToggleId == 'next') {
+						module.myStopFunction();
+						module.nextFunc();
+					} else if (dataToggleId == 'prev') {
+						module.myStopFunction();
+						module.prevFunc();
+					}else if (dataToggleId == 'autoplay') {
+						timeInterval = 1000;
+						myVar = setInterval(myTimer, timeInterval);
+						function myTimer() {
+							module.nextFunc();
+						}
+
+					}
+				},
+				myStopFunction: function() {
+				clearInterval(myVar);
+				},
+				nextFunc: function(){
+						firstLi = ul.firstElementChild;
 						cloned = firstLi.cloneNode(true);
 						ul.appendChild(cloned);
-						createStyle('left', -static, ul);
+						module.createStyle('left', -static, ul);
 						ul.removeChild(firstLi);
-						createStyle('left', 0, ul);
+						module.createStyle('left', 0, ul);
+				},
+				prevFunc: function(){
+						firstLi = ul.firstElementChild;
+						listLi = ul.lastElementChild;
+						ul.insertBefore(listLi, firstLi);
+				},
+				createStyle: function (prop, args, el) {
+					el.style.cssText += prop + ":" + args + "px";
+				},
+				handler: function () {
+					ul = document.querySelector('ul');
+					count = ul.children.length;
+					static = parseInt(getComputedStyle(ul.parentNode).getPropertyValue('width'));
+					play = document.getElementById('play');
+					width = static*count;
+					play.addEventListener("click", module.mayFunc, true);
+					module.createStyle('width', width, ul);
 				}
-				e.preventDefault();
-                return false;
-            });
-			function createStyle(prop, args, el){
-				el.style.cssText += prop+":"+args+"px";
+
 			}
-		})();
+		}());
+
+		module.handler();
+
+
 	</script>
 </body>
 </html>
