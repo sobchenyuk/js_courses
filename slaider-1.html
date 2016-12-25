@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin: 0;
+	}
+	div{
+		width: 200px;
+		height: 200px;
+		overflow: hidden;
+	}
+	ul{
+		list-style: none;
+		padding: 0;
+		position: relative;
+	}
+	li {
+		width: 200px;
+		height: 200px;
+		float: left;
+	}
+	span{
+		display: block;
+		color: black;
+	}
+</style>
+<body>
+	<div>
+		<ul>
+			<li style="background: red">1</li>
+			<li style="background: green">2</li>
+			<li style="background: red">3</li>
+			<li style="background: green">4</li>
+		</ul>
+	</div>
+	<div id="play">
+		<a href="#" data-controls="next">next</a>
+		<a href="#" data-controls="pre">prev</a>
+	</div>
+	<script>
+		(function(){
+			var ul = document.querySelector('ul'),
+				count = ul.children.length,
+				static = parseInt(getComputedStyle(ul.parentNode).getPropertyValue('width')),
+				width = static * count,
+				play =  document.getElementById('play');
+			createStyle('width', width, ul);
+			play.addEventListener("click",  function(e) {
+				var target = e.target || e.srcElement;
+				dataToggleId = target.getAttribute('data-controls');
+				if(dataToggleId == 'next'){
+					var firstLi = ul.firstElementChild,
+						cloned = firstLi.cloneNode(true);
+						ul.appendChild(cloned);
+						createStyle('left', -static, ul);
+						ul.removeChild(firstLi);
+						createStyle('left', 0, ul);
+				}
+				e.preventDefault();
+                return false;
+            });
+			function createStyle(prop, args, el){
+				el.style.cssText += prop+":"+args+"px";
+			}
+		})();
+	</script>
+</body>
+</html>
