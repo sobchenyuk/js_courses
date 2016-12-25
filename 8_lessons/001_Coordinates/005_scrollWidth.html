@@ -1,0 +1,35 @@
+<!-- Ширина и высота контента с учетом прокручиваемой области. -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <style>
+        #container {
+            width: 350px;
+            height: 150px;
+            margin: 10px;
+            border: 10px solid red;
+        }
+        .inner {
+            width: 1000px;
+            height: 1000px;
+        }
+    </style>
+    <script type="text/javascript">
+        function GetContainerSize() {
+            var container = document.getElementById("container");
+            var message = "Ширина: " + container.scrollWidth + "px.\n";
+            message += "Высота: " + container.scrollHeight + "px.\n";
+            alert(message);
+            alert(container.clientHeight +"  / " + container.clientWidth);
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div class="inner">
+        </div>
+    </div>
+    <button onclick="GetContainerSize();">получить размера скролла контейнера</button>
+</body>
+</html>

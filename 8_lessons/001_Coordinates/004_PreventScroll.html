@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PreventScroll</title>
+    <style>
+        body {
+            width: 2000px;
+            height: 2000px;
+        }
+    </style>
+    <script>
+    window.addEventListener("load", function () {
+        var preventScroll = document.getElementById("prevent-scroll");
+        var undoscroll = document.getElementById("undo-scroll");
+        preventScroll.addEventListener("click", function () {
+            document.body.style.overflow = "hidden";
+        });
+        undoscroll.addEventListener("click", function () {
+            document.body.style.overflow = "";
+        });
+    });
+    </script>
+</head>
+<body>
+    <button id="prevent-scroll">Отменить прокрутку</button>
+    <button id="undo-scroll">Вернуть прокрутку</button>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll</title>
+    <style>
+        body {
+            height: 2000px;
+            width: 2400px;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, nobis expedita dicta harum exercitationem animi et soluta repudiandae perferendis esse veritatis temporibus perspiciatis nemo, porro sapiente facere numquam, adipisci fuga!</p>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est similique doloribus perferendis, voluptas magni laboriosam temporibus assumenda dolor quisquam reprehenderit. Reiciendis fugiat harum, deleniti sint quos voluptatum esse, quaerat quidem.</p>
+    <button onclick="scrollToTop()">scrollToTop</button>
+    <button onclick="clickHandler()">scrollBy</button>
+    <script>
+        function clickHandler() {
+    // Метод scrollBy(x,y) прокручивает страницу относительно текущих координат.
+            window.scrollBy(300, 100);
+            alert("pageXOffset: " + window.pageXOffset + ", pageYOffset: " + window.pageYOffset);
+    // Метод scrollTo(pageX,pageY) прокручивает страницу к указанным координатам относительно документа
+        };
+        function scrollToTop () {
+            window.scrollTo(0, 0);
+            console.log("pageXOffset: " + window.pageXOffset + ", pageYOffset: " + window.pageYOffset);
+        }
+    </script>
+</body>
+</html>

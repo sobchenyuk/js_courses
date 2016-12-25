@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>onpropertychange</title>
+    <script>
+    window.addEventListener("load", function () {
+        var checkbox = document.getElementById("correct-onchange");
+        
+        if("onpropertychange" in checkbox) { 
+        // если поддерживается (IE)
+            checkbox.onpropertychange = function() {
+                if (event.propertyName == "checked") { // имя свойства
+                    alert(checkbox.checked);
+                }
+            };
+        } else {
+        // остальные браузеры
+            checkbox.onchange = function() {
+                alert(checkbox.checked);
+            };
+        }
+    });
+    </script>
+</head>
+<body>
+    <input id="correct-onchange" type="checkbox"> Чекбокс с "onchange", работающим везде одинаково;
+</body>
+</html>

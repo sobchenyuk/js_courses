@@ -1,0 +1,40 @@
+<!-- Событие focus вызывается тогда, когда пользователь фокусируется на элементе, например кликает на INPUT. -->
+<!-- Событие blur вызывается, когда фокус исчезает, например посетитель кликает на другом месте экрана. -->
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>onSubmit</title>
+  <style>
+    .error { background: red; };
+  </style>
+  <script>
+    window.addEventListener("load", function () {
+      var input = document.getElementById('age');
+      var errorHolder = document.getElementById('error');
+
+      input.addEventListener("blur", function() {
+        if (isNaN(this.value)) { // введено не число
+        // показать ошибку
+          this.className = 'error';
+          errorHolder.innerHTML = 'Вы ввели не число. Исправьте, пожалуйста'
+        }
+      });
+
+      input.addEventListener("focus", function() { 
+        // сбросить состояние "ошибка", если оно есть
+        if (this.className == 'error') {
+          this.className = '';
+          errorHolder.innerHTML = '';
+        }
+      });
+      
+    });
+  </script>
+</head>
+<body>
+  <label>Введите ваш возраст: <input type="text" id="age"></label>
+
+  <div id="error">здесь будет ошибка, если вы введёте не число</div>
+</body>
+</html>

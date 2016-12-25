@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    <style>
+        #move-div {
+            height: 50px; 
+            width: 50px; 
+            background-color: red;
+            border-radius: 50px; 
+            position: relative;
+        }
+    </style>
+    <script type="text/javascript">
+        var moveDiv;
+        var leftPos = 0;
+
+        window.addEventListener("load", function () {
+            var moveInterval = null;
+            var moveDiv = document.getElementById("move-div");
+            var stopButton = document.getElementById("stop-button");
+            // var windowWidth = window.innerWidth; 
+            var windowWidth = document.body.clientWidth;
+            moveDiv.addEventListener("click", moveDivHandler);
+            
+            function moveDivHandler (e) {
+                moveInterval = setInterval( function () { 
+                    moveDiv.style.left = leftPos + "px"; 
+                    leftPos += 1;
+                    var divWidth = windowWidth - moveDiv.clientWidth;
+                    if (leftPos ===  divWidth) {
+                        leftPos = 0;
+                    }
+                }, 10);
+            };
+
+            stopButton.addEventListener("click", function () {
+                clearInterval(moveInterval);
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="move-div">
+        
+    </div>
+    <button id="stop-button">stop</button>
+</body>
+</html>

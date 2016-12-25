@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>onSubmit</title>
+  <script>
+    window.addEventListener("load", function () {
+      var myForm = document.getElementById("myForm");
+      var myInput = document.getElementById("demo");
+      var mySubmit = document.getElementById("my-submit");
+      myInput.addEventListener("click", function () {
+        myForm.submit();
+      });
+      mySubmit.addEventListener("click", function (e) {
+        e.preventDefault();
+        return false;
+      });
+    });
+  </script>
+</head>
+<body>
+  <form id="myForm">
+    Имя: <input type="text" name="fname"><br />
+    Фамилия: <input type="text" name="lname"><br /><br />
+    <input type="button" id="demo" value="Отправить">
+    <input type="submit" id="my-submit" value="Send">
+  </form>
+</body>
+</html>

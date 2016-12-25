@@ -1,0 +1,20 @@
+<!-- Событие input срабатывает тут же при изменении значения текстового элемента и поддерживается всеми браузерами, кроме IE<9.
+
+В IE9 оно поддерживается частично, а именно — не возникает при удалении символов. -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>onInput</title>
+  <script>
+    window.addEventListener("load", function () {
+      var input = document.getElementById("on-input");
+      input.addEventListener("input", function () {  // измените на onchange
+        document.getElementById('result').innerHTML = input.value;});
+    });
+  </script>
+</head>
+<body>
+  <input type="text" id="on-input" /> oninput: <span id="result"></span>
+</body>
+</html>

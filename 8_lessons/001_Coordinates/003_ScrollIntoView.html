@@ -1,0 +1,23 @@
+<!-- Метод elem.scrollIntoView(top) вызывается на элементе и прокручивает страницу так, чтобы элемент оказался вверху, если параметр top равен true, и внизу, если top равен false. Причем, если параметр top не указан, то он считается равным true. -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ScrollIntoView()</title>
+  <script type="text/javascript">
+    function showIt(elID) {
+      var el = document.getElementById(elID);
+      el.scrollIntoView(true); // false
+    }
+  </script>
+
+</head>
+<body>
+    <div style="height: 5em; width: 30em; overflow: scroll;border: 1px solid blue;">
+        <div style="height: 100px"></div>
+        <p id="pToShow">Параграф что будем показывать</p>
+        <div style="height: 100px"></div>
+    </div>
+    <input type="button" value="Показать параграф" onclick="showIt('pToShow');">
+</body>
+</html>

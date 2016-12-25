@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+.wheel {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    display: block;
+    background: red;
+}
+</style>
+
+<body>
+    <div class="wheel"></div>
+    <div id="delta"></div>
+    <script>
+    var elem = document.querySelector('.wheel');
+
+    if (elem.addEventListener) {
+        if ('onwheel' in document) {
+            // IE9+, FF17+, Ch31+
+            elem.addEventListener("wheel", onWheel);
+        } else if ('onmousewheel' in document) {
+            // устаревший вариант события
+            elem.addEventListener("mousewheel", onWheel);
+        } else {
+            // Firefox < 17
+            elem.addEventListener("MozMousePixelScroll", onWheel);
+        }
+    } else { // IE8-
+        elem.attachEvent("onmousewheel", onWheel);
+    }
+
+    function onWheel(e) {
+        e = e || window.event;
+
+        var delta = e.deltaY || e.detail || e.wheelDelta;
+
+        console.log(e.deltaY);
+        console.log(e.detail);
+        console.log(e.wheelDelta);
+        
+        var info = document.getElementById('delta');
+
+        info.innerHTML = +info.innerHTML + delta;
+
+    }
+    </script>
+</body>
+
+</html>

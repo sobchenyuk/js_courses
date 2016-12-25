@@ -1,0 +1,21 @@
+<!-- Для большинства типов input значение доступно на чтение-запись в value: -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Inputs</title>
+    <script>
+window.addEventListener("load", function(){
+    var simpleInput = document.getElementById("simple-input");
+    var simpleTextarea = document.getElementById("simple-textarea");
+    simpleInput.addEventListener("click", function() {
+        alert(simpleInput.value);
+        alert(simpleTextarea.value);
+    })
+});
+    </script>
+</head>
+    <input id="simple-input" type="button" value="Value">
+    <textarea id="simple-textarea" name="name" id="" cols="30" rows="10">Просто текст</textarea>
+</body>
+</html>

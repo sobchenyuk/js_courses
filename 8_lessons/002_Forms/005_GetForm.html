@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <script>
+        window.addEventListener("load", function () {
+            var mainForm = document.forms[0]; 
+            var registration = document.getElementById("registration");
+            registration.addEventListener("click", function () {
+                mainForm.elements[0].value = "text";
+                mainForm.elements[1].value = "text2";
+                mainForm.elements[2].value = "text3";
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <label>Имя <input type="text" value="1" /></label>
+        <label>Фамилия<input type="text" value="2" /></label>
+        </label>Возраст<input type="text" value="3" /></label>
+        <input type="button" value="Регистрация" id="registration" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Select</title>
+    <script>
+    window.addEventListener("load", function() {
+        var tryIt = document.getElementById("tryit");
+        tryIt.addEventListener("click", function () {
+            var mySelectlength = document.getElementById("mySelect").length;
+            var mySelectValue = document.getElementById("mySelect").value;
+            document.getElementById("demo").innerHTML = "количество вариантов выбора - " + mySelectlength + ". Выбранное значени: " + mySelectValue;
+        });
+    });
+    </script>
+</head>
+<body>
+
+    <h3>A demonstration of how to access a SELECT element</h3>
+
+    <select id="mySelect">
+      <option>Яблоко</option>
+      <option>Груша</option>
+      <option>Банан</option>
+      <option>Панда</option>
+    </select>
+
+  <button id="tryit">Пробовать</button>
+
+  <p id="demo"></p>
+
+</body>
+</html>

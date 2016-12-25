@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CopyPastes</title>
+  <script>
+    window.addEventListener("load", function () {
+      var myInput = document.getElementById("demo");
+      myInput.oncut = myInput.oncopy = myInput.onpaste = function (e) {  
+          document.getElementById('result').innerHTML = e.type + ' ' + myInput.value; // e.type - тип события;
+        }
+    });
+  </script>
+</head>
+<body>
+  <input type="text" id="demo"> event: <span id="result"></span>
+</body>
+</html>

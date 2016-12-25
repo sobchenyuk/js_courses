@@ -1,0 +1,40 @@
+<!-- Внешняя ширина/высота блока, полный размер, включая рамки, исключая внешние отступы margin. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>offsetWidth/Height</title>
+</head>
+    <style>
+        #container {
+            width: 350px;
+            height: 150px;
+            margin: 10px;
+            border: 2px solid red;
+            padding: 15px;
+        }
+    </style>
+    <script type="text/javascript">
+        function GetContainerSize () {
+            var container = document.getElementById ("container");
+
+            var message = "Высота с padding: " + container.clientHeight + "px.\n";
+            message += "Высота с padding и border: " + container.offsetHeight + "px.\n";
+
+            message += "Ширина с padding: " + container.clientWidth + "px.\n";
+            message += "Ширина с padding и border: " + container.offsetWidth + "px.\n";
+
+            alert (message);
+        }
+    </script>
+<body>
+    <div id="container">
+        Ширина элемента - 350px<br />
+        Высота элемента 150px<br />
+        CSS стили:<br />
+        margin: 10px; border: 2px solid red; padding: 15px;
+    </div>
+    <button onclick="GetContainerSize ();">Получить размер контейнера</button>
+</body>
+</html>
+

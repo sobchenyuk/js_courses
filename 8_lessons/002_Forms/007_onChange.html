@@ -1,0 +1,23 @@
+<!-- Событие change происходит при изменении значения элемента формы -->
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Событие onchange</title>
+ </head> 
+ <body>
+    <form action="">
+        <fieldset>
+            <legend>Быстрый переход по сайту</legend>
+            <select onchange="window.location=this.options[this.selectedIndex].value;">
+                <option value="#">Выберите раздел сайта</option>
+                <option value="#depart.html">Отделения</option>
+                <option value="#techinfo.html">Техническая информация</option>
+                <option value="#study.html">Обучение</option>
+            </select>
+        </fieldset>
+    </form>
+    <input type="text" onchange="console.log(this.value)">
+    <input type="button" value="Кнопка">
+ </body>
+</html>

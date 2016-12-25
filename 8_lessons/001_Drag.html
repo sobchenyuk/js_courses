@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Перетаскивание элементов документа</title>
+    <style>
+    #drag-element {
+        position: absolute;
+        left: 100px;
+        top: 100px;
+        height: 50px;
+        width: 50px;
+        background-color: Green;
+    }
+    </style>
+    <script type="text/javascript">
+        window.addEventListener("load", function () {
+
+            var dragElement = document.getElementById("drag-element");
+            dragElement.addEventListener("mousedown", drag);
+            function drag(e) {
+                var startX = e.clientX, startY = e.clientY;
+
+                var origX = dragElement.offsetLeft, origY = dragElement.offsetTop;
+                // разница между координатами мыши и координатами перетаскиваемого элемента.
+
+                var deltaX = startX - origX;
+                var deltaY = startY - origY;
+
+                window.addEventListener("mousemove", moveHandler);
+                window.addEventListener("mouseup", upHandler);
+
+                function moveHandler(e) {
+                    dragElement.style.left = (e.clientX - deltaX) + "px";
+                    dragElement.style.top = (e.clientY - deltaY) + "px";
+                };
+
+                function upHandler(e) {
+                    window.removeEventListener("mouseup", upHandler);
+                    window.removeEventListener("mousemove", moveHandler);
+                };
+            };
+        });
+    </script>
+</head>
+<body>
+    <div id="drag-element"></div>
+</body>
+</html>
