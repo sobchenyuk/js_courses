@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>Prototype</title>
+<body>
+    <script>
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+
+        Person.prototype.nationality = "Ukrainian";
+
+        var myFather = new Person("Ivan", "Ivanov", 50, "blue");
+        
+        document.write("My father is " + myFather.nationality + "<br />"); 
+
+        Person.prototype.nationality = "American";
+
+        var myMother = new Person("Irina", "Ivanova", 51, "green");
+         
+        document.write("My mother is " + myMother.nationality + "<br />");
+         document.write("My father is " + myFather.nationality + "<br />"); 
+
+    </script>
+
+</body>
+</html>

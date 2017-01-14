@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DateTime</title>
+    <script>
+        // конструктор Date создает объект с текущей датой и временем:
+        var today = new Date();
+        alert(today);
+
+        // new Date(dateString) можно использовать один из форматов:
+        // "October 13, 1975 11:13:00"
+        // "October 13, 1975 11:13"
+        // "October 13, 1975"
+        // 2010/08/17 12:09:36
+        // 2016-08-17 12:09:36
+         var dateString = "1989/08/17 12:09:36";
+         var threeYearsAgo = new Date(dateString);
+         document.write(threeYearsAgo);
+
+        var detailedDate = new Date(2011, 0, 1, 2, 3, 4, 567);
+        console.log(detailedDate);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

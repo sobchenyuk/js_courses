@@ -1,0 +1,27 @@
+<!-- Создайте функцию, которая возвращает день недели для даты. -->
+
+<!-- День нужно возвратить в формате - понедельник имеет номер 1, вторник номер 2, …, воскресенье - номер 7. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+<body>
+    <script>
+        function getWeekDay(date) {
+
+        var day = date.getDay();
+
+        if ( day == 0 ) {
+            day = 7; 
+        }
+
+        return day;
+        };
+
+        document.write("Номер дня недели - " + getWeekDay(new Date(2012,0,8)) ); //воскресенье
+
+</script>
+</body>
+</html>

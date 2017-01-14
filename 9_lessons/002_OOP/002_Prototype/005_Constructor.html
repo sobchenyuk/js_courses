@@ -1,0 +1,34 @@
+<!-- constructor  содержит ссылку на функцию -->
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>Prototype</title>
+<body>
+    <script>
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+
+        var myBrother = new Person("Ivan", "Ivanov", 50, "blue");
+        
+        document.write(myBrother.constructor === Person);
+        document.write("<br />");
+        
+        console.log(Person.prototype);
+
+
+      Person.prototype = {men: true};
+
+        var myFather = new Person("Ivan", "Ivanov", 50, "blue");
+        document.write(myFather.constructor === Person);
+        console.log(Person.prototype);
+
+        var myArray = [1,23,3];
+        console.log(myArray.constructor);
+    </script>
+
+</body>
+</html>

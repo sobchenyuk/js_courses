@@ -1,0 +1,31 @@
+<!-- Все get методы, возвращают результат для местной временной зоны. Существуют также UTC-варианты этих методов, возвращающие день, месяц, год и т.п. для зоны GMT+0 (UTC): getUTCFullYear(), getUTCMonth(), getUTCDay(). То есть, сразу после "get" вставляется "UTC". -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date.get* </title>
+    <meta charset="UTF-8">
+    <script type="text/javascript" language="JavaScript">
+        var date = new Date();
+        document.write("<b>date = </b>" + date + "<br/>");
+        document.write("<b>date.getDate() = </b>" + date.getDate() + "<br/>");
+        document.write("<b>date.getMonth() = </b>" + date.getMonth() + "<br/>");
+        document.write("<b>date.getFullYear() = </b>" + date.getFullYear() + "<br/>"); // правильно
+        document.write("<b>date.getYear() = </b>" + date.getYear() + "<br/>"); // неправильно, 1900 + date.getYear()
+        document.write("<b>date.getDay() = </b>" + date.getDay() + "<br/><br/>"); // от 0(воскресенье) до 6(суббота).
+
+        document.write("<b>date.getHours() = </b>" + date.getHours() 
+                              + "<br/>");
+        document.write("<b>date.getMinutes() = </b>" + date.getMinutes() 
+                              + "<br/>");
+        document.write("<b>date.getSeconds() = </b>" + date.getSeconds()
+                              + "<br/>");
+        document.write("<b>date.getMilliseconds() = </b>" + date.getMilliseconds() + "<br/><br/>");
+
+        // .getTime() возвращает число миллисекунд, прошедших с 01.01.1970 00:00:00 UTC
+        document.write("<b>date.getTime() = </b>" + date.getTime() + "<br/><br/>"); // старо
+
+    </script>
+</head>
+<body>
+</body>
+</html>

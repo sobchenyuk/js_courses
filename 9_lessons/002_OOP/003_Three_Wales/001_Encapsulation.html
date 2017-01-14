@@ -1,0 +1,34 @@
+<!-- Инкапсуляция - сокрытие релаизаци. -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Инкапсуляция</title>
+    <script type="text/javascript">
+
+        function MyClass() {
+
+            // закрытый метод
+            var privateMethod = function () {
+                document.write("Закрытый метод");
+            };
+
+            // открытый метод
+            this.publicMethod = function () {
+                document.write("Открытый метод <br />");
+                privateMethod();
+            };
+
+        };
+        
+        var obj = new MyClass();
+        obj.publicMethod();
+        console.log(obj);
+
+        obj.privateMethod(); // ошибка
+
+    </script>
+</head>
+<body>
+</body>
+</html>
+

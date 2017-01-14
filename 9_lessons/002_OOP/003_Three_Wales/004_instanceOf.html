@@ -1,0 +1,28 @@
+<!-- Оператор instanceof используется для проверки, принадлежит ли объект данному типу -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>instanceOf</title>
+    <script>
+        var theDay = new Date(2009, 11, 17);
+        if (theDay instanceof Date) {
+          alert("Объект класса Date")
+        };
+
+        var myString = new String();
+        var myDate = new Date()
+
+        myString instanceof String  // true
+        myString instanceof Object // true
+        myString instanceof Date   // false
+
+        myDate instanceof Date     // true
+        myDate instanceof Object   // true
+        myDate instanceof String   // false
+
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Date Value OF</title>
+</head>
+<body>
+    <script>
+       var dateWithoutValue = new Date(), 
+           value1 = dateWithoutValue.valueOf();
+       console.log(dateWithoutValue);
+       console.log(value1);
+
+       var dateWithValue = new Date(2016, 09, 08),
+            value2 = dateWithValue.valueOf(); // +new Date(2016, 09, 08);
+       console.log(dateWithValue);
+       console.log(value2);
+
+    </script>
+</body>
+</html>

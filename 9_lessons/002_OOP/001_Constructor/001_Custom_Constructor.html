@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Constructors</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Функция-конструктор для создания объекта Human.
+
+        function Human(name, surname) {
+            this.name = name;
+            this.surname = surname;
+        }
+
+        // Создание 2 экземпляров класса Human
+
+        var firstHuman = new Human("Ivan", "Ivanov");
+        
+        var secondHuman = new Human("Petr", "Petrov");
+
+        document.write("имя человека: " + firstHuman.name + " " + firstHuman.surname + "<br />");
+        document.write("имя второго человека: " + secondHuman.name + " " + secondHuman.surname + "<br />");
+    </script>
+</body>
+</html>

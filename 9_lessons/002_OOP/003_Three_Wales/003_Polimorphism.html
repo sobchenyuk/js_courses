@@ -1,0 +1,48 @@
+<!-- Полиморфизм -  возможность объектов с одинаковой спецификацией иметь различную реализацию. -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Полиморфизм</title>
+    <script type="text/javascript">
+// ---- родительский класс ----
+
+        function Animal(name, walkSpeed) {
+            this.name = name;
+            this.walkSpeed = walkSpeed;
+            // добавляем методы объекта
+            this.showInfo = function () {
+                document.write("Эта животное " + this.name + " передвигается со скоростью " + this.walkSpeed + "<br />"); 
+            };
+        };
+
+        // ---- класс наследник ----
+
+        function Bird(name, walkSpeed) {
+            this.name = name;
+            this.walkSpeed = walkSpeed;
+        };
+
+        function Predator(name, walkSpeed) {
+            this.name = name;
+            this.walkSpeed = walkSpeed;
+            this.showInfo = function () {
+                document.write("Эта животное хищник, он всегда быстрый"); 
+            };
+        };
+
+        Bird.prototype = new Animal;
+        Predator.prototype = new Animal;
+
+
+        var bird = new Bird("Owl", 50);
+        var wolf = new Predator("Wolf", 70);
+
+        bird.showInfo();
+        wolf.showInfo();
+
+</script>
+</head>
+<body>
+</body>
+</html>
+

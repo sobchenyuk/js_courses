@@ -1,0 +1,27 @@
+<!-- Все сет методы, кроме setTime(), обладают также UTC-вариантом, например: setUTCHours(). -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Date.set</title>
+</head>
+<body>
+    <script type="text/javascript" language="JavaScript">
+        var date = new Date();
+        date.setDate(27); 
+        date.setMonth(4); 
+        date.setFullYear(2005);
+        date.setHours(5); 
+        date.setMinutes(5); 
+        date.setSeconds(5); 
+        date.setMilliseconds(555);
+        document.write("<strong>date = </strong>" + date + "<br />");
+        var date2 = new Date();
+
+        date2.setTime(100000000000); // устанавливает всю дату по миллисекундам с 01.01.1970 UTC
+        document.write("<strong>date2 = </strong>" + date2);
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!-- Реализуйте последний 2 слайда в презентации с помощью пройденого на уроке материала -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+<body>
+    <script>
+    function Man () {
+        this.walk = function () {
+            document.write("i can walk" + "<br />");
+        };
+        this.eat = function () {
+            document.write("i can eat" + "<br />");
+        };
+        this.drink = function () {
+            document.write("i can drink" + "<br />")
+        };
+    };
+
+    function Doctor () {
+        this.cure = function () {
+            document.write("i can cure" + "<br />");
+        };
+    };
+
+    function Soldier () {
+        this.shoot = function () {
+            document.write("i can shoot" + "<br />");
+        };
+    };
+
+    var newMan = new Man();
+
+    Doctor.prototype = newMan;
+    Soldier.prototype = newMan;
+
+    var newDoctor = new Doctor();
+    var newSoldier = new Soldier();
+
+
+    newSoldier.walk();
+    newSoldier.eat();
+    newSoldier.drink();
+    newSoldier.shoot();
+    document.write("<br />");
+    newDoctor.walk();
+    newDoctor.eat();
+    newDoctor.drink();
+    newDoctor.cure();
+
+    function Dentist () {
+        this.cure = function () {
+            document.write("i can only cure your teeth" + "<br />");
+        };
+    };
+
+    function Surgeon () {
+        this.cure = function () {
+            document.write("i can only do the surgery" + "<br />");
+        };
+    };
+
+
+    var newDentist = new Dentist();
+    var newSurgeon = new Surgeon();
+
+    Dentist.prototype = newDoctor;
+    Surgeon.prototype = newSurgeon;
+
+    document.write("<br />");
+    newDentist.cure();
+    newSurgeon.cure();
+
+    </script>
+</body>
+</html>

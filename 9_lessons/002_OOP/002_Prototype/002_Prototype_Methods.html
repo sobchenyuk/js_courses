@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>Prototype</title>
+<body>
+    <script>
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+            this.nationalityChecker = function () {
+                document.write("My nationality is" + this.nationality + "<br />"); 
+            };
+        };
+        
+        Person.prototype.nationality = "Ukrainian";
+
+        var myFather = new Person("Ivan", "Ivanov", 50, "blue");
+
+        myFather.nationalityChecker();
+
+    </script>
+
+</body>
+</html>

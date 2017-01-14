@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Метод toString</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        
+        function Person(age, salary) {
+            this.age = age;
+            this.salary = salary;
+        }
+
+        Person.prototype.showName = function () {
+            return this.salary + this.age ;
+        };
+             // переопределение метода toString из Object
+        Person.prototype.toString = function () {
+            return " Возраст:" + this.age + " Зарплата:" + this.salary;
+        };
+
+       var firstHuman = new Person(32, 400);
+
+        console.log(firstHuman.toString());
+
+
+        Array.prototype.joins = function joins (){
+            return this.join(':');
+        }
+
+        console.log([1,2,3,4].joins());
+
+        console.log(Array.prototype)
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
