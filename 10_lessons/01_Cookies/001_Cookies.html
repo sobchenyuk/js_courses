@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Сохранение cookie</title>
+    <script type="text/javascript">
+        function setCookie() {
+            document.cookie = "info=123";
+            // Значение Cookie не могут содержать точку с запятой, запятые или символы разделители. Перед сохранением значение в cookie желательно вызвать  функцию encodeURIComponent() при чтении значения надо вызвать decodeURIComponent()
+            // записанный таким способом cookie сохраняются в текущем сеансе браузера но удаляются после его закрытия.
+        };
+
+        function getCookie() {
+            alert(document.cookie);
+        };
+    </script>
+</head>
+<body>
+    <input type="button" value="Задать cookie" onclick="setCookie()" />
+    <input type="button" value="Прочитать cookie" onclick="getCookie()" />
+</body>
+</html>

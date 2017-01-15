@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Работа с cookies</title>
+    <script type="text/javascript">
+        function setCookie() {
+            document.cookie = "lang=HTML; max-age=120";
+        };
+
+        function getCookie() {
+            alert(document.cookie);
+        };
+
+        function changeCookie() {
+            document.cookie = "lang=JavaScript; max-age=120";
+            alert("Cookies was changed to " + document.cookie);
+        };
+
+        function deleteCookie() {
+            document.cookie = "lang=JavaScript; max-age=0";
+            alert("Cookies was deleted " + document.cookie);
+        };
+
+    </script>
+</head>
+<body>
+    <input type="button" value="Задать cookie" onclick="setCookie()" />
+    <input type="button" value="Получить cookie" onclick="getCookie()" />
+    <input type="button" value="Изменить cookie" onclick="changeCookie()" />
+    <input type="button" value="Удалить cookie" onclick="deleteCookie()" />
+</body>
+</html>

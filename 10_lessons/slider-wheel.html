@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <style>
+    .slide
+    {
+        display: table;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .slider-list {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        margin: auto;
+        position: relative;
+    }
+
+    .slider-move{
+        position: relative;
+    }
+    
+    .slider-list img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .-active {
+        opacity: .5
+    }
+    </style>
+    <div class="slide">
+        <div class="slider-list">
+            <div class="slider-move">
+                <img src="./images/1.png" alt="">
+                <img src="./images/2.png" alt="">
+                <img src="./images/4.png" alt="">
+                <img src="./images/3.jpg" alt="">
+                <img src="./images/4.png" alt="">
+                <img src="./images/2.png" alt="">
+                <img src="./images/1.png" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+    function Slider(elem){
+        if(!elem) return;
+
+        this.elem = elem;
+        this.heightChildren = this.elem.firstElementChild.clientHeight;
+        this.status = true;
+        this.addListenerPolyfill();
+        
+    }
+    Slider.prototype.addListenerPolyfill = function() {
+        if (this.elem.addEventListener) {
+          if ('onwheel' in document) {
+            // IE9+, FF17+, Ch31+
+            this.elem.addEventListener("wheel", this.handlerScroll.bind(this));
+          } else if ('onmousewheel' in document) {
+            // устаревший вариант события
+            this.elem.addEventListener("mousewheel", this.handlerScroll.bind(this));
+          } else {
+            // Firefox < 17
+            this.elem.addEventListener("MozMousePixelScroll", this.handlerScroll.bind(this));
+          }
+        } else { // IE8-
+          this.elem.attachEvent("onmousewheel", this.handlerScroll.bind(this));
+        }
+    }
+
+    Slider.prototype.handlerScroll = function (e) {
+
+          if(this.status != true) return;
+
+          this.status = false;
+
+          var e = e || window.event;
+
+          this.cssStyle(this.elem, 'top', -this.heightChildren+'px');
+
+          if(e.wheelDelta < 0){
+            this.elem.appendChild(this.elem.firstElementChild);
+          } else {
+            this.elem.insertBefore(this.elem.lastElementChild, this.elem.firstElementChild);
+          }
+
+          this.cssStyle(this.elem, 'top', 0);
+
+          setTimeout(() => {
+              this.status = true;
+          }, 500);
+        
+    }
+
+    Slider.prototype.cssStyle = function (el, attr, value) {
+        el.style.cssText = attr+":"+value;
+    }
+
+    new Slider(document.querySelector('.slider-move'));
+    </script>
+</body>
+
+</html>

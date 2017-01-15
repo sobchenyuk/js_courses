@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    <script>
+        var loginKey = "login";
+
+        function userInput () {
+            var userLogin = prompt("Введите Ваш логин");
+            if (userLogin == "Admin" || userLogin == "admin") {
+                window.localStorage.setItem(loginKey, userLogin);
+                showInfo();
+            }
+            else {
+                userInput();
+            }
+        }
+
+        if (window.localStorage.getItem(loginKey) == "admin" || window.localStorage.getItem(loginKey) == "Admin") {
+            showInfo();
+        }
+        else {
+            userInput();
+        }
+
+        function showInfo () {
+            var userName = window.localStorage.getItem(loginKey);
+            document.write("Пользоваетль " + userName + " вошел в систему");
+            document.write("<br/> <button id='logout'>Выйти</button>");
+        };
+
+       var logOutbutton = document.getElementById("logout");
+       logOutbutton.addEventListener("click", function () {
+            window.localStorage.removeItem(loginKey);
+            location.reload();
+        });
+    </script>
+</head>
+<body>
+    <!-- Создайте страницу которая запрашивает имя пользователя, если пользователь вводит "Admin" либо "admin" он попадает на страницу, которая оповещает его о том что " Пользоваетль Admin(не статическая строка, а данные что ввел пользователь) вошел в систему" а рядом разместите кнопку "Выход" которая вернет пользователя к модальному окну ввода логина. Реализуйте код как для куки так и для localstorage. -->
+
+</body>
+</html>

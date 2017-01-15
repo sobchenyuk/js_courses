@@ -1,0 +1,73 @@
+    <!-- Создайте страницу которая запрашивает имя пользователя, если пользователь вводит "Admin" либо "admin" он попадает на страницу, которая оповещает его о том что " Пользоваетль Admin(не статическая строка, а данные что ввел пользователь) вошел в систему" а рядом разместите кнопку "Выход" которая вернет пользователя к модальному окну ввода логина. Реализуйте код как для куки так и для localstorage. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    <script>
+        var cookieLogin = "login";
+        
+        if ( getCookie(cookieLogin) === "Admin" || getCookie(cookieLogin) === "admin" ) {
+            showResult();
+        }
+        else {
+            askLogin();
+        }
+
+        function askLogin () {
+            var answer = prompt("Введите Ваш логин");
+            var expire = "15/02/2015 00:00:00";
+            if (answer == "Admin" || answer == "admin") {
+                setCookie(answer, expire);
+                showResult();
+            }
+            else {
+                askLogin();
+            }
+        };
+
+        function setCookie (login, expireDate) {
+            var cookieLogin = "login=" + login + ";";
+            var cookieExpireDate = "expires=" + expireDate + ";";
+            document.cookie = cookieLogin + cookieExpireDate;
+        };
+
+        function getCookie(cookiename) {
+            var name = cookiename + "=";
+            var cookieArray = document.cookie.split(';');
+            for (var i=0; i < cookieArray.length; i++) {
+                var cookieValue = cookieArray[i];
+                while (cookieValue.charAt(0)==' ') {
+                    cookieValue = cookieValue.substring(1);
+                };
+                if (cookieValue.indexOf(name) != -1) {
+                    return cookieValue.substring(name.length,cookieValue.length);
+                }
+            };
+            return "";
+        };
+
+        function deleteCookie (cookie_name) {
+            var cookie_date = new Date ( ); 
+            cookie_date.setTime ( cookie_date.getTime() - 1 );
+            document.cookie = cookie_name += "=; expires=" + cookie_date;
+        };
+
+        function showResult () {
+            var userName = getCookie(cookieLogin);
+            document.write("Пользоваетль " + userName + " вошел в систему");
+            document.write("<br/> <button id='logout'>Выйти</button>");
+        };
+
+       var logOutbutton = document.getElementById("logout");
+       logOutbutton.addEventListener("click", function () {
+            deleteCookie(cookieLogin);
+            location.reload();
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
