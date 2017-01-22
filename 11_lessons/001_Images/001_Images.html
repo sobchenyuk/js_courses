@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Работа с изображениями</title>
+    <script>
+        window.addEventListener("load", function () {
+
+            var img1 = document.images; // Коллекция всех изображений   
+
+            var img2 = document.images.namedItem("logoname"); 
+            var img3 = document.images["logoname"];  // Идентичные выражения
+
+            var img4 = document["nextlogo"];
+            var img5 = document.images["nextlogo"]; // Идентичные выражения
+
+            var img6 = document["images-class"]; // Невозможно получать классы
+
+            console.log(img1, img2, img3, img4, img5, img6);
+
+        });
+    </script>
+</head>
+<body>
+    <img id="logo" name="logoname" src="logo.png" alt="UIS" title="Учебный центр UIS" />
+    <br>
+    <img id="nextlogo" name="logoname" class="images-class" src="logo.png" alt="UIS" title="Учебный центр UIS" />
+</body>
+</html>

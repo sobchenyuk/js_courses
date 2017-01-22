@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        window.onload = function () {
+            var mycanvas = document.getElementById("mycanvas");
+            var mycontext = mycanvas.getContext("2d");
+
+            mycontext.beginPath();
+            mycontext.arc(40, 40, 25, 0, Math.PI * 2, true); // рисуем круг
+            mycontext.closePath();
+
+            mycontext.fillStyle = "#f00";
+            mycontext.fill(); // заполняем круг сплошным цветом 
+
+            mycontext.beginPath();
+            mycontext.arc(70, 40, 25, 0, Math.PI * 2, true); // рисуем другой круг
+            mycontext.closePath();
+
+           /* mycontext.beginPath();
+            mycontext.arc(90, 40, 25, 0, Math.PI * 2, true); // рисуем другой круг
+            mycontext.closePath();*/
+
+            mycontext.fillStyle = "rgba(0,0,255,0.5)";
+            mycontext.fill(); // заливаем второй круг сплошным цветом
+
+        }
+    </script>
+</head>
+<body>
+    <canvas id="mycanvas"></canvas>
+</body>
+</html>

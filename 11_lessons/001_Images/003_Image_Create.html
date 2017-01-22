@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ImageCreate</title>
+    <script>
+    window.addEventListener('load', function () {
+        var myImage = new Image(); // Адаптивность по высоте при вызове конструктора с аргументами
+        myImage.src = 'logo.png';
+        document.body.appendChild(myImage);
+
+        var createdImage = document.createElement("img");
+        createdImage.src = "javascript_logo.png";
+        document.body.appendChild(createdImage);
+    });
+       </script>
+</head>
+<body>
+    
+</body>
+</html>

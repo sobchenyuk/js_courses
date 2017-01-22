@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        window.onload = function () {
+            var mycanvas = document.getElementById("mycanvas");
+            var mycontext = mycanvas.getContext("2d");
+            mycontext.lineWidth = "12";
+            mycontext.lineJoin = "round"; //miter
+            mycontext.moveTo(20, 20);
+            mycontext.lineTo(50, 50);
+            mycontext.lineTo(20, 70);
+            mycontext.stroke();
+        }
+    </script>
+</head>
+<body>
+    <canvas id="mycanvas" width="200" height="200" style="border: solid 1px black;"></canvas>
+    <p>Стилями визуализации путей можно управлять разными способами. Ширина линий (обводок) устанавливается в свойстве line Width. 
+    Свойство lineCap управляет визуализацией концов линии (срезанный, скру­гленный и т. д.), а свойство linejoin — формой соединения двух сегментов 
+    линии
+    </p>
+</body>
+</html>
+
+

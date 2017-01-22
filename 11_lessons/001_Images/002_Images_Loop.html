@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Работа с изображениями</title>
+    <script>
+        window.addEventListener("load", function () {
+            var showImageUrl = document.getElementById("show");
+            showImageUrl.addEventListener("click", function() {
+                var imagesArray = document.images;
+                var text = "";
+                for (var i = 0; i < imagesArray.length; i++) {
+                    text += imagesArray[i].src + "<br>";  // получаем значение атрибута src
+                };
+                document.getElementById("demo").innerHTML = text;
+            });
+        });
+    </script>
+</head>
+<body>
+    <img id="logo" name="logoname" src="logo.png" alt="UIS" title="Учебный центр UIS" />
+    <br>
+    <img id="nextlogo" name="logoname" src="logo.png" alt="UIS" title="Учебный центр UIS" />
+    <br>
+    <img src="javascript_logo.png" alt="javascript" title="javascript logo">
+    <br>
+    <button id="show">Получить</button>
+    <br>
+    <p id="demo"></p>
+
+</body>
+</html>

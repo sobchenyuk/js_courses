@@ -1,0 +1,41 @@
+﻿<!DOCTYPE>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>drawImage()</title>
+    <script type="text/javascript">
+        function draw() {
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+
+            var logo = new Image();
+            logo.src = "logo.png";
+                        
+            logo.onload = function () {
+                context.drawImage(logo, 22, 22);
+            }      
+        
+        }
+
+        if (window.addEventListener)
+            window.addEventListener("load", draw, true);
+    </script>
+</head>
+<body>
+    <input type="file" id="file">
+    <canvas id="canvas" height="300" width="300" style="border: solid 1px black;">
+        Ваш браузер не поддерживает элемент <b>Canvas</b>
+    </canvas>
+    <script>
+
+    var f = document.querySelector("#file");
+
+    f.addEventListener('change', function(event){
+        console.log(event.target.files);
+    })
+
+
+    </script>
+</body>
+</html>
+

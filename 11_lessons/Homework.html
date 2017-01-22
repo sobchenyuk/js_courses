@@ -1,0 +1,46 @@
+<!-- 
+    1.) Реализуйте hover изображений с помощью Javascript.
+    2.) Добавьте второй изображение при помощи JavaScript. При клике на изображение откройте его в полном размере.
+    3.) Выведите в рамзетку альтернативный текст для картинок.
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    <script>
+        window.addEventListener('load', function(){
+            var logo = document.getElementById("logo");
+            logo.addEventListener("mouseover", function(){
+                this.src = "001_Images/javascript_logo.png";
+            });
+            logo.addEventListener("mouseout", function(){
+                this.src = "001_Images/logo.png";
+            });
+
+            var jsLogo = new Image (100);
+            jsLogo.src = "001_Images/javascript_logo.png";
+            jsLogo.id = "javascript_logo";
+            jsLogo.alt = "Javascript Logo";
+            document.body.appendChild(jsLogo);
+
+            jsLogo.addEventListener("click", function () {
+                window.open(jsLogo.src, "Picture big", "width=500,height=200,resizable=yes,scrollbars=yes,status=yes");
+            });
+
+            var imageArray = document.images;
+            for (var i = 0; imageArray.length > i ; i++) {
+                var imagesAlt = imageArray[i].alt;
+                var wrapperForAlt = document.getElementById("images_alt");
+                wrapperForAlt.innerHTML = imagesAlt;
+            };
+        });
+    </script>
+</head>
+<body>
+    <img src="001_Images/logo.png" alt="logo" title="logo" id="logo">
+    <p id="images_alt">
+        
+    </p>
+</body>
+</html>

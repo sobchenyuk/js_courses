@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>drawImage()</title>
+    <script type="text/javascript">
+        function draw() {
+
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+
+            var pattern = new Image();
+            pattern.src = "logo.png";
+
+            pattern.onload = function () {
+                context.fillStyle = context.createPattern(pattern, 'no-repeat');
+                context.fillRect(0, 0, 300, 300);
+            }
+        }
+
+        if (window.addEventListener)
+            window.addEventListener("load", draw, true);
+    </script>
+</head>
+<body>
+    <canvas id="canvas" height="300" width="300" style="border: solid 1px black;">
+    </canvas>
+        <p>
+            Узоры — это, по сути, любые изображения (или даже другие элементы canvas), которые применяются в качестве «цветов» линий или заливок, 
+причем изображение может повторяться и укладываться внутри выбран­ной области различными способами. Вы создаете объект узора, указываете, 
+какое изображение использовать и каким способом его повторять, а затем устанавливаете его в качестве strokeStyle или fillStyle. 
+        При настройке заливки узором можно определить способ повторения (выкладки) изображения. Команда API «холста» createPattem(...) при­
+нимает второй, строковый параметр, который и управляет повторением изображения. Если повторять изображение не требуется, используйте 
+значение no-repeat. В настоящее время единственный поддерживае­мый во всех браузерах вариант выкладки — это repeat. Он определяет равномерное
+         повторение изображения по горизонтали и по вертикали
+        </p>
+</body>
+</html>
+
+
+
