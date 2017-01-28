@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Создание объекта запроса</title>
+    <!-- XMLHttpRequest - объект позволяющий взаимодействовать с протоколом HTTP.    -->
+    <script type="text/javascript">
+    function crossBrowserXHR() {
+        var xmlhttp;
+        if (window.XMLHttpRequest) { // нормальные браузеры
+            return new XMLHttpRequest();
+        } else { // IE6, IE5
+            return new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    }
+    function loadXMLDoc() {
+        var xmlhttp = crossBrowserXHR();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+                // Если ответ (response) от сервера не XML формата, используйте свойство responseText, иначе responseXML.
+                console.log("this");
+            }
+        }
+        xmlhttp.open("GET", "ajax.html", false);
+        //1ый аргумент метод; 2ой - респонс; 3 - sync/async (по умолчанию) - асинхронный запрос
+        xmlhttp.send();
+
+        console.log("end");
+    }
+
+
+    </script>
+</head>
+
+<body>
+    <div id="myDiv">
+        <h2>AJAX в действии</h2>
+    </div>
+    <button type="button" onclick="loadXMLDoc()">Изменить контент</button>
+</body>
+
+</html>

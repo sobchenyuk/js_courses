@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript and PHP AJAX</title>
+    <script>
+        function showHint(str) {
+          if (str.length === 0) { 
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+          }
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+              console.log(xmlhttp.responseText);
+              document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+            }
+          }
+          xmlhttp.open("GET", "gethint.php?q="+str, true);
+          xmlhttp.send();
+        }
+    </script>
+</head>
+<body>
+
+  <h3>Введите текст:</h3>
+  <form action="" method="GET"> 
+    Имя: <input type="text" id="txt1" onkeyup="showHint(this.value)" />
+  </form>
+  <p>Подсказки: 
+      <span id="txtHint">
+          
+      </span>
+  </p> 
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>XML пример</title>
+    <script>
+        function loadXMLDoc(url) {
+            var xmlhttp;
+            var txt ,cdDisk, cdDiskFirst, i;
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                    txt = "<table border='1'><tr><th>Название</th><th>Исполнитель</th></tr>";
+                    cdDisk = xmlhttp.responseXML.documentElement.getElementsByTagName("CD");
+                  
+                for (i = 0; i < cdDisk.length; i++) {
+                    txt = txt + "<tr>";
+                    cdDiskFirst = cdDisk[i].getElementsByTagName("TITLE");
+                    {
+                        if(cdDiskFirst[0].firstChild.nodeValue) {
+                            txt = txt + "<td>" + cdDiskFirst[0].firstChild.nodeValue + "</td>";
+                        }
+                        else {
+                            txt = txt + "<td> </td>";
+                        }
+                    }
+                  cdDiskFirst = cdDisk[i].getElementsByTagName("ARTIST");
+                  {
+                      if(cdDiskFirst[0].firstChild.nodeValue) {
+                          txt = txt + "<td>" + cdDiskFirst[0].firstChild.nodeValue + "</td>";
+                      }
+                      else {
+                        txt = txt + "<td> </td>";
+                      }
+                  }
+
+                  txt = txt + "</tr>";
+                }
+
+                txt = txt + "</table>";
+                document.getElementById('txtCDInfo').innerHTML = txt;
+              }
+            };
+          xmlhttp.open("GET",url,true);
+          xmlhttp.send();
+        };
+    </script>
+</head>
+<body>
+
+  <div id="txtCDInfo">
+      <button onclick="loadXMLDoc('cd_catalog.xml')">Скачать CD</button>
+  </div>
+
+</body>
+</html>

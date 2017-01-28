@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+    <style>
+        #support { border: 1px solid; padding: 1em; }
+        .fail { background: red; border-color: red; padding: 1em; }
+        .pass { background: green; border-color: #468847; padding: 1em; }
+    </style>
+</head>
+ <body>
+    <p id="support">Загрузка…</p>
+    <script>
+        (function() {
+
+            var element = document.getElementById('support');
+
+            var notSupported = function() {
+                element.innerHTML = 'Ваш браузер не поддерживает<code>xhr.responseType="json"</code> yet. :(';
+                element.className = 'fail';
+            };
+
+            var supported = function() {
+                element.innerHTML = 'Ваш браузер поддерживает <code>xhr.responseType="json"</code>. Вы видите свой айпи.';
+                element.className = 'pass';
+            };
+
+            var getJSON = function(url, successHandler, errorHandler) {
+                if (typeof XMLHttpRequest == 'undefined') {
+                    return notSupported();
+                }
+                var xhr = new XMLHttpRequest();
+                xhr.open('get', url, true);
+                xhr.responseType = 'json';
+                xhr.onload = function() {
+                    var status = xhr.status;
+                    if (status === 200) {
+                        successHandler(xhr.response);
+                    } else {
+                        errorHandler(status);
+                    }
+                };
+                xhr.send();
+            };
+
+            getJSON('http://ip-api.com/json', function (data) {
+                if (typeof data == 'string') {
+                    notSupported();
+                } else {
+                    console.log(data);
+                    supported();
+                    alert('Ваш IP: ' + data.query);
+                }
+            }, function () {
+                notSupported();
+            });
+        }());
+    </script>
+<!-- <a href="http://goo.gl/4bmMYW">http://goo.gl/4bmMYW</a> -->
+<!-- <a href="https://www.classmarker.com/online-test/start/?quiz=dep544221ee5dd41">https://www.classmarker.com/online-test/start/?quiz=dep544221ee5dd41</a> -->
+ </body>

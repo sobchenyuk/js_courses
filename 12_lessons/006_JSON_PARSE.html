@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSON parse</title>
+</head>
+<body>
+	<script>
+		var obj = {
+			language: "JavaScript",
+			version: "ECMA 5"
+		}
+
+		window.localStorage.setItem('app', obj) // Error
+
+		window.localStorage.setItem('app', JSON.stringify(obj)) // Success
+
+
+		var workingString = window.localStorage.getItem('app'); // String
+
+		var workingObject = JSON.parse(workingString); // Object
+
+	</script>
+</body>
+</html>
